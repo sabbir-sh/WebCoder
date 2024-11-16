@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\UserController;
 
 Route::get('/',function(){
     return view('welcome');
@@ -19,6 +20,13 @@ Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logOut')->
 Route::group(['middleware'=> 'auth'], function(){
     Route::get('admin/dashboard', [CustomAuthController::class, 'dashboard'])->name('adminDashboard');
     Route::get('/user/list', [CustomAuthController::class, 'userList'])->name('listOfUser');
+
+
+
+    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('users.edit'); // Edit user
+    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('users.update'); // Update user
+    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('users.destroy');
+
 });
 
 
