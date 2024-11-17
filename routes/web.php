@@ -28,7 +28,7 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
 
     Route::get('/users/create', [CustomAuthController::class, 'create'])->name('sabbir.create');
-Route::post('/users', [CustomAuthController::class, 'store'])->name('sabbir.store');
+    Route::post('/users', [CustomAuthController::class, 'store'])->name('sabbir.store');
 
 
 
