@@ -78,11 +78,38 @@ class CustomAuthController extends Controller
     }
     public function userList()
     {
-
-        $users = User::all();
-        return view('userList', ['users' => $users]);
+        $da['welcome'] = 'Welcome To User List Page';
+        $da['title'] = 'All User Lists';
+        $da['users']= User::all();
+        return view('user.userList', $da);
     }
 
+
+    public function create()
+{
+    return view('user.create');  // This should match the view file location
+}
+
+    // Add the store method to handle saving the user data
+    public function store(Request $request)
+    {
+        // Validation
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        // Create the user
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        // Redirect or show success message
+        return redirect()->route('listOfUser')->with('success', 'User created successfully!');
+    }
 
 
     public function edit($id)
@@ -90,41 +117,34 @@ class CustomAuthController extends Controller
         // Find the user by ID
         $user = User::findOrFail($id);
 
-        // Return the edit view with the user data
-        return view('users.edit', compact('user'));
+        // Pass the user data to the 'user.edit' view
+        return view('user.edit', compact('user'));
+    }
+    public function update(Request $request, $id)
+    {
+        // Find the user by ID
+        $user = User::findOrFail($id);
+
+        // Validate the form input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $id,
+            // Add other validation rules as necessary
+        ]);
+
+        // Update the user with the validated data
+        $user->update($request->only(['name', 'email', 'phone', 'gender', 'bio']));
+
+        // Redirect back with a success message
+        return redirect()->route('listOfUser')->with('success', 'User updated successfully.');
     }
 
-// app/Http/Controllers/CustomAuthController.php
-
-public function update(Request $request, $id)
-{
-    // Find the user by ID
-    $user = User::findOrFail($id);
-
-    // Validate the incoming request data
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|max:255|unique:users,email,' . $id,  // Make sure email remains unique excluding current user
-        'phone' => 'nullable|string|max:15',
-    ]);
-
-    // Update the user details
-    $user->name = $request->input('name');
-    $user->email = $request->input('email');
-    $user->phone = $request->input('phone');
-    $user->save(); // Save changes to the database
-
-    // Redirect back to the user list with a success message
-    return redirect()->route('listOfUser')->with('success', 'User updated successfully');
-}
-
-
-public function destroy($id)
-{
-    $user = User::findOrFail($id);
-    $user->delete();
-    return redirect()->route('listOfUser')->with('success', 'User deleted successfully');
-}
+        public function destroy($id)
+        {
+            $user = User::findOrFail($id);
+            $user->delete();
+            return redirect()->route('listOfUser')->with('success', 'User deleted successfully');
+        }
 
 
 

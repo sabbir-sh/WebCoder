@@ -109,31 +109,31 @@
 
                         <!-- Gender -->
             <!-- Gender -->
-<div class="form-group">
-    <label for="gender">Gender</label>
-    <div>
-        <label class="me-3">
-            <input type="radio" name="gender" value="male"
-                {{ old('gender', isset($user) ? $user->gender : '') == 'male' ? 'checked' : '' }}> Male
-        </label>
-        <label class="me-3">
-            <input type="radio" name="gender" value="female"
-                {{ old('gender', isset($user) ? $user->gender : '') == 'female' ? 'checked' : '' }}> Female
-        </label>
-        <label>
-            <input type="radio" name="gender" value="other"
-                {{ old('gender', isset($user) ? $user->gender : '') == 'other' ? 'checked' : '' }}> Other
-        </label>
-    </div>
-    <span class="text-danger">@error('gender') {{ $message }} @enderror</span>
-</div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <div>
+                    <label class="me-3">
+                        <input type="radio" name="gender" value="male"
+                            {{ old('gender', isset($user) ? $user->gender : '') == 'male' ? 'checked' : '' }}> Male
+                    </label>
+                    <label class="me-3">
+                        <input type="radio" name="gender" value="female"
+                            {{ old('gender', isset($user) ? $user->gender : '') == 'female' ? 'checked' : '' }}> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="other"
+                            {{ old('gender', isset($user) ? $user->gender : '') == 'other' ? 'checked' : '' }}> Other
+                    </label>
+                </div>
+                <span class="text-danger">@error('gender') {{ $message }} @enderror</span>
+            </div>
 
-<!-- Bio -->
-<div class="form-group">
-    <label for="bio">Bio</label>
-    <textarea id="bio" class="form-control" placeholder="Write about yourself" name="bio" rows="4">{{ old('bio', isset($user) ? $user->bio : '') }}</textarea>
-    <span class="text-danger">@error('bio') {{ $message }} @enderror</span>
-</div>
+            <!-- Bio -->
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" class="form-control" placeholder="Write about yourself" name="bio" rows="4">{{ old('bio', isset($user) ? $user->bio : '') }}</textarea>
+                <span class="text-danger">@error('bio') {{ $message }} @enderror</span>
+            </div>
 
 
             <div class="form-group">

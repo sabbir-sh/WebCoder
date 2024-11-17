@@ -23,9 +23,14 @@ Route::group(['middleware'=> 'auth'], function(){
 
 
 
-    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('users.edit'); // Edit user
-    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('users.update'); // Update user
-    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('users.destroy');
+    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('sabbir.edit'); // Edit user
+    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update'); // Update user
+    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
+
+    Route::get('/users/create', [CustomAuthController::class, 'create'])->name('sabbir.create');
+Route::post('/users', [CustomAuthController::class, 'store'])->name('sabbir.store');
+
+
 
 });
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Web || Coder</title>
+    <title>Customer Lists</title>
     <style>
         :root {
             --background-color-light: #f8f9fa;
@@ -123,8 +123,10 @@
 
     <!-- Main Content -->
     <div class="container-fluid">
-        <h4 class="text-primary">All User Lists</h4>
+        <h4 class="text-primary">{{$welcome}}</h4>
+        <h4 class="text-secondary">{{$title}}</h4>
         <hr>
+        <a href="{{ route('sabbir.create') }}" class="btn btn-sm btn-success mb-3">Add User</a>
         @if($users->count() > 0)
         <div class="table-responsive">
             <table class="table table-striped table-hover">
@@ -132,8 +134,11 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Date Of Birth</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Gender</th>
+                        <th>Bio</th>
                         <th>Created At</th>
                         <th>Actions</th>
                     </tr>
@@ -143,16 +148,19 @@
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
+                        <td>{{ $user->dob }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->phone }}</td>
+                        <td>{{ $user->gender }}</td>
+                        <td>{{ $user->bio }}</td>
                         <td>{{ $user->created_at->format('d M Y') }}</td>
                         <td>
                             <!-- Edit Button -->
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('sabbir.edit', $user->id) }}" class="btn btn-sm btn-primary">
                                 Edit
                             </a>
                             <!-- Delete Button -->
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline-block;">
+                            <form action="{{ route('sabbir.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger"
@@ -172,38 +180,6 @@
         </div>
         @endif
     </div>
-
-    <!-- Toggle Theme Button -->
-    <button class="theme-toggle-btn" id="theme-toggle-btn">Switch to Dark Mode</button>
-
-    <script>
-        // Check local storage for theme preference
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            document.querySelector('.sidebar').classList.add('dark-mode');
-            document.querySelector('.container-fluid').classList.add('dark-mode');
-            document.querySelector('table').classList.add('dark-mode');
-            document.getElementById('theme-toggle-btn').textContent = 'Switch to Light Mode';
-        }
-
-        // Toggle between dark and light mode
-        document.getElementById('theme-toggle-btn').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('.sidebar').classList.toggle('dark-mode');
-            document.querySelector('.container-fluid').classList.toggle('dark-mode');
-            document.querySelector('table').classList.toggle('dark-mode');
-
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            if (isDarkMode) {
-                localStorage.setItem('theme', 'dark');
-                document.getElementById('theme-toggle-btn').textContent = 'Switch to Light Mode';
-            } else {
-                localStorage.setItem('theme', 'light');
-                document.getElementById('theme-toggle-btn').textContent = 'Switch to Dark Mode';
-            }
-        });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
