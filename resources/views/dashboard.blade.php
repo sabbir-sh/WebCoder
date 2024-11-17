@@ -11,107 +11,125 @@
         body {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             margin: 0;
             background-color: #f8f9fa;
         }
 
         .sidebar {
             width: 250px;
-            background-color: #080808;
+            background-color: #343a40;
             color: white;
             height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
-            padding-top: 30px;
+            padding-top: 20px;
         }
 
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px 15px;
-            display: block;
-        }
-
-        .sidebar a:hover {
-            background-color: #575757;
-        }
-
-        .container {
-            margin-left: 270px;
-            width: 100%;
-            max-width: 900px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(243, 240, 240, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        h4 {
+        .sidebar h3 {
             text-align: center;
             margin-bottom: 20px;
         }
 
-        table {
-            margin-top: 20px;
+        .sidebar a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 4px;
+            margin-bottom: 5px;
         }
 
-        /* Center the table within the container */
-        table {
-            width: 100%;
-            text-align: left;
+        .sidebar a:hover,
+        .sidebar a.active {
+            color: white;
+            background-color: #495057;
         }
 
-        td, th {
-            vertical-align: middle;
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+
+        .table-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
-            display: none;
+            background-color: #343a40;
+        }
+
+        .navbar a {
+            color: white !important;
         }
     </style>
 </head>
 
 <body>
-    <!-- Sidebar Navigation -->
+    <!-- Sidebar -->
     <div class="sidebar">
-        <h3 class="text-center text-white">Dashboard</h3>
-        
-
-        <!-- User Main Menu -->
-        <a href="#userSubMenu" data-bs-toggle="collapse" class="dropdown-toggle">User</a>
-        <div class="collapse" id="userSubMenu">
-            <a href="{{ route('listOfUser') }}" class="ps-4">User List</a>
+        <h3>Dashboard</h3>
+        <a href="#userSubMenu" data-bs-toggle="collapse" class="dropdown-toggle">User Management</a>
+        <div class="collapse ps-3" id="userSubMenu">
+            <a href="{{ route('listOfUser') }}">User List</a>
         </div>
-
-        <!-- Logout -->
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('register') }}">Register</a>
         <a href="{{ route('logOut') }}">Logout</a>
     </div>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <h4>Welcome to Dashboard</h4>
-        <hr>
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->email }}</td>
-                    <td>{{ $data->phone }}</td>
-                    <td><a href="{{ route('logOut') }}" class="btn btn-danger btn-sm">Logout</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Admin Dashboard</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logOut') }}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div class="table-container mt-4">
+            <h4>Welcome to Dashboard</h4>
+            <hr>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $data->name }}</td>
+                        <td>{{ $data->email }}</td>
+                        <td>{{ $data->phone }}</td>
+                        <td><a href="{{ route('logOut') }}" class="btn btn-danger btn-sm">Logout</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
