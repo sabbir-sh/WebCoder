@@ -66,6 +66,14 @@
                 @enderror
             </div>
 
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input
+                    type="date" id="dob" class="form-control" name="dob"
+                    value="{{ old('dob', $user->dob ) }}">
+                <span class="text-danger">@error('dob') {{ $message }} @enderror</span>
+            </div>
+
             <!-- Email Field -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>

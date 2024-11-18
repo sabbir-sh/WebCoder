@@ -27,8 +27,9 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update'); // Update user
     Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
 
-    Route::get('/users/create', [CustomAuthController::class, 'create'])->name('sabbir.create');
-    Route::post('/users', [CustomAuthController::class, 'store'])->name('sabbir.store');
+    Route::get('/user/create', [CustomAuthController::class, 'create'])->name('user.create');
+    Route::post('/user/store', [CustomAuthController::class, 'store'])->name('user.store');
+
 
 
 

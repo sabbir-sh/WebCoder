@@ -7,14 +7,17 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
+
 class CustomAuthController extends Controller
 {
-    public function login(){
-        return view( "auth.login");
+    public function login()
+    {
+        return view("auth.login");
     }
 
-    public function register(){
-        return view( "auth.register");
+    public function register()
+    {
+        return view("auth.register");
     }
 
     public function registerUser(Request $request)
@@ -28,20 +31,20 @@ class CustomAuthController extends Controller
             'bio' => 'nullable|string|max:500',
             'password' => 'required|min:4|max:8'
         ]);
-    $user = new User();
-    $user->name = $request->name;
-    $user->dob = $request->input('dob');
-    $user->email = $request->email;
-    $user->phone = $request->number;
-    $user->gender = $request->input('gender');
-    $user->bio = $request->input('bio');
-    $user->password = Hash::make($request->password) ;
-    $res = $user->save();
-    if ($res) {
-        return redirect()->route('login')->with('success', 'You have registered successfully. Please log in!');
-    } else {
-        return back()->with('fail', 'Something went wrong. Please try again.');
-    }
+        $user = new User();
+        $user->name = $request->name;
+        $user->dob = $request->input('dob');
+        $user->email = $request->email;
+        $user->phone = $request->number;
+        $user->gender = $request->input('gender');
+        $user->bio = $request->input('bio');
+        $user->password = Hash::make($request->password);
+        $res = $user->save();
+        if ($res) {
+            return redirect()->route('login')->with('success', 'You have registered successfully. Please log in!');
+        } else {
+            return back()->with('fail', 'Something went wrong. Please try again.');
+        }
     }
 
     public function loginUser(Request $request)
@@ -56,7 +59,7 @@ class CustomAuthController extends Controller
         if (Auth::attempt($credentials)) {
             // return redirect('dashboard');
             return redirect()->route('adminDashboard');
-        } else{
+        } else {
             return back()->with('fail', 'Invalid email or password');
         }
     }
@@ -76,39 +79,13 @@ class CustomAuthController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('login');
     }
+
     public function userList()
     {
         $da['welcome'] = 'Welcome To User List Page';
         $da['title'] = 'All User Lists';
-        $da['users']= User::all();
+        $da['users'] = User::all();
         return view('user.userList', $da);
-    }
-
-
-    public function create()
-{
-    return view('user.create');  // This should match the view file location
-}
-
-    // Add the store method to handle saving the user data
-    public function store(Request $request)
-    {
-        // Validation
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|confirmed',
-        ]);
-
-        // Create the user
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
-
-        // Redirect or show success message
-        return redirect()->route('listOfUser')->with('success', 'User created successfully!');
     }
 
 
@@ -139,13 +116,43 @@ class CustomAuthController extends Controller
         return redirect()->route('listOfUser')->with('success', 'User updated successfully.');
     }
 
-        public function destroy($id)
-        {
-            $user = User::findOrFail($id);
-            $user->delete();
-            return redirect()->route('listOfUser')->with('success', 'User deleted successfully');
-        }
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('listOfUser')->with('success', 'User deleted successfully');
+    }
 
+    public function create()
+    {
 
+        return view('user.create');
+    }
 
+    public function store(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'name' => 'required',
+            'dob' => 'required|date|before:today',
+            'email' => 'required|email|unique:users',
+            'number' => 'required|numeric',
+            'gender' => 'required|in:male,female,other',
+            'bio' => 'nullable|string|max:500',
+            'password' => 'required|min:4|max:8'
+        ]);
+
+        // Create a new user with a hashed password
+        User::create([
+            'name' => $request->name,
+            'dob' => $request->input('dob'), // Ensure it matches the column name in your database
+            'email' => $request->email,
+            'phone' => $request->input('number'), // Ensure it matches the column name in your database
+            'gender' => $request->input('gender'),
+            'bio' => $request->input('bio'),
+            'password' => bcrypt($request->password), // Hash the password
+        ]);
+        // Redirect back with a success message
+        return redirect()->route('listOfUser')->with('success', 'User created successfully!');
+    }
 }

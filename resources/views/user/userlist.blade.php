@@ -1,12 +1,13 @@
 @extends('layout')
 
 @section('content')
-    <!-- Main Content -->
+ <!-- Main Content -->
     <div class="container-fluid">
         <h4 class="text-primary">{{$welcome}}</h4>
         <h4 class="text-secondary">{{$title}}</h4>
+        <a href="{{route('user.create')}}" class="btn btn-success btn-sm" title="AddUser">Add User</a>
         <hr>
-        <a href="{{ route('sabbir.create') }}" class="btn btn-sm btn-success mb-3">Add User</a>
+
         @if($users->count() > 0)
         <div class="table-responsive">
             <table class="table table-striped table-hover">

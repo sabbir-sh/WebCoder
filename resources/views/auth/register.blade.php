@@ -18,24 +18,21 @@
             @csrf
             <div class="form-group">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" class="form-control" placeholder="Enter Full Name" name="name" value="{{ old('name') }}">
+                <input type="text" id="name" class="form-control" placeholder="Enter Full Name" name="name" value="">
                 <span class="text-danger">@error('name') {{$message}}@enderror</span>
             </div>
 
             <div class="form-group">
                 <label for="dob">Date of Birth</label>
                 <input
-                    type="date"
-                    id="dob"
-                    class="form-control"
-                    name="dob"
-                    value="{{ old('dob', isset($user) ? $user->dob : '') }}">
+                    type="date" id="dob" class="form-control" name="dob"
+                    value="">
                 <span class="text-danger">@error('dob') {{ $message }} @enderror</span>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Enter Email" name="email" value="{{ old('email') }}">
+                <input type="email" id="email" class="form-control" placeholder="Enter Email" name="email" value="">
                 <span class="text-danger">@error('email') {{$message}}@enderror</span>
             </div>
 
@@ -45,16 +42,13 @@
                 <label for="gender">Gender</label>
                 <div>
                     <label class="me-3">
-                        <input type="radio" name="gender" value="male"
-                            {{ old('gender', isset($user) ? $user->gender : '') == 'male' ? 'checked' : '' }}> Male
+                        <input type="radio" name="gender" value="male"> Male
                     </label>
                     <label class="me-3">
-                        <input type="radio" name="gender" value="female"
-                            {{ old('gender', isset($user) ? $user->gender : '') == 'female' ? 'checked' : '' }}> Female
+                        <input type="radio" name="gender" value="female"> Female
                     </label>
                     <label>
-                        <input type="radio" name="gender" value="other"
-                            {{ old('gender', isset($user) ? $user->gender : '') == 'other' ? 'checked' : '' }}> Other
+                        <input type="radio" name="gender" value="other"> Other
                     </label>
                 </div>
                 <span class="text-danger">@error('gender') {{ $message }} @enderror</span>
@@ -63,14 +57,14 @@
             <!-- Bio -->
             <div class="form-group">
                 <label for="bio">Bio</label>
-                <textarea id="bio" class="form-control" placeholder="Write about yourself" name="bio" rows="4">{{ old('bio', isset($user) ? $user->bio : '') }}</textarea>
+                <textarea id="bio" class="form-control" placeholder="Write about yourself" name="bio" rows="4"></textarea>
                 <span class="text-danger">@error('bio') {{ $message }} @enderror</span>
             </div>
 
 
             <div class="form-group">
                 <label for="number">Phone Number</label>
-                <input type="number" id="number" class="form-control" placeholder="Enter Number" name="number" value="{{ old('number') }}">
+                <input type="number" id="number" class="form-control" placeholder="Enter Number" name="number" value="">
                 <span class="text-danger">@error('number') {{$message}}@enderror</span>
             </div>
 
