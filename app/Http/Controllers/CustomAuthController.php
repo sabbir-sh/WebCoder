@@ -84,7 +84,7 @@ class CustomAuthController extends Controller
     {
         $da['welcome'] = 'Welcome To User List Page';
         $da['title'] = 'All User Lists';
-        $da['users'] = User::all();
+        $da['users'] = User::orderBy('id','desc')->get();
         return view('user.userList', $da);
     }
 

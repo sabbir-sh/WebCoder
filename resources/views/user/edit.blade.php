@@ -1,54 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit User</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .sidebar {
-            height: 100vh;
-            width: 250px;
-            position: fixed;
-            background: #343a40;
-            color: white;
-            padding: 20px;
-        }
-        .sidebar h3 {
-            text-align: center;
-            color: #f8f9fa;
-        }
-        .sidebar a {
-            color: #f8f9fa;
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .sidebar a:hover {
-            background: #495057;
-        }
-        .main-content {
-            margin-left: 270px;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h3>Dashboard</h3>
-        <a href="{{ route('listOfUser') }}">User List</a>
-
-        <a href="{{ route('logOut') }}">Logout</a>
-    </div>
-
+@extends('layout')
+@section('content')
     <!-- Main Content -->
     <div class="main-content">
         <h4 class="text-primary">Edit User</h4>
@@ -66,6 +17,7 @@
                 @enderror
             </div>
 
+             <!-- DOB Field -->
             <div class="form-group">
                 <label for="dob">Date of Birth</label>
                 <input
@@ -73,6 +25,7 @@
                     value="{{ old('dob', $user->dob ) }}">
                 <span class="text-danger">@error('dob') {{ $message }} @enderror</span>
             </div>
+            
 
             <!-- Email Field -->
             <div class="mb-3">
@@ -112,8 +65,4 @@
             <button type="submit" class="btn btn-success">Update User</button>
         </form>
     </div>
-
-    <!-- Include Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    @endsection
