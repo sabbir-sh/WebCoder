@@ -2,7 +2,7 @@
 @extends('layout')
 @section('content')
 <div class="container">
-    <h2>Create New User</h2>
+    <h2 style="text-align: center">Create New User</h2>
     <form action="{{ route('user.store') }}" method="POST">
         <!-- Success Message -->
         @if(session('success'))

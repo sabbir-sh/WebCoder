@@ -2,7 +2,7 @@
 @section('content')
     <!-- Main Content -->
     <div class="main-content">
-        <h4 class="text-primary">Edit User</h4>
+        <h4 class="text-primary" style="text-align: center">Edit User</h4>
         <hr>
         <form action="{{ route('sabbir.update', $user->id) }}" method="POST" class="p-5 col-8 bg-light rounded shadow">
             @csrf
@@ -25,7 +25,7 @@
                     value="{{ old('dob', $user->dob ) }}">
                 <span class="text-danger">@error('dob') {{ $message }} @enderror</span>
             </div>
-            
+
             <!-- Email Field -->
             <div class="mb-3">
                 <label for="email" class="form-label"> <strong>Email</strong></label>

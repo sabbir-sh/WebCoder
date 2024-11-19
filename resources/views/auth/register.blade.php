@@ -4,7 +4,7 @@
 @section('content')
     <!-- Main Content Container -->
     <div class="container">
-        <h4>Registration Page</h4>
+        <h4 style="text-align: center">Registration Page</h4>
         <hr>
         <form action="{{ route('register-user') }}" method="POST" class="p-3 col-10 bg-light rounded shadow">
             @if(Session::has('success'))

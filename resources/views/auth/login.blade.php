@@ -3,7 +3,7 @@
 @section('content')
     <!-- Main Content Container -->
     <div class="container">
-        <h4>Login Page</h4>
+        <h4 style="text-align: center">Login Page</h4>
         <hr>
 
         <form action="{{ route('login-user') }}" method="POST" class="p-3 col-6 bg-light rounded shadow">
