@@ -24,6 +24,7 @@ Route::group(['middleware'=> 'auth'], function(){
 
 
     Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('sabbir.edit'); // Edit user
+    Route::get('/users/{id}/view', [CustomAuthController::class, 'view'])->name('sabbir.view'); // Edit user
     Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update'); // Update user
     Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
 

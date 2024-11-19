@@ -97,6 +97,16 @@ class CustomAuthController extends Controller
         // Pass the user data to the 'user.edit' view
         return view('user.edit', compact('user'));
     }
+
+    public function view($id)
+    {
+        // Find the user by ID
+        $user = User::findOrFail($id);
+
+        // Pass the user data to the 'user.edit' view
+        return view('user.view', compact('user'));
+    }
+
     public function update(Request $request, $id)
     {
         // Find the user by ID
@@ -105,12 +115,13 @@ class CustomAuthController extends Controller
         // Validate the form input
         $request->validate([
             'name' => 'required|string|max:255',
+            'dob' => 'required|date|before:today',
             'email' => 'required|email|unique:users,email,' . $id,
             // Add other validation rules as necessary
         ]);
 
         // Update the user with the validated data
-        $user->update($request->only(['name', 'email', 'phone', 'gender', 'bio']));
+        $user->update($request->only(['name', 'dob', 'email', 'phone', 'gender', 'bio']));
 
         // Redirect back with a success message
         return redirect()->route('listOfUser')->with('success', 'User updated successfully.');

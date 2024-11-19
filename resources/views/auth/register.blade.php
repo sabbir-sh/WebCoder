@@ -6,7 +6,7 @@
     <div class="container">
         <h4>Registration Page</h4>
         <hr>
-        <form action="{{ route('register-user') }}" method="POST">
+        <form action="{{ route('register-user') }}" method="POST" class="p-3 col-10 bg-light rounded shadow">
             @if(Session::has('success'))
                 <div class="alert alert-success">{{ Session::get('success') }}</div>
             @endif

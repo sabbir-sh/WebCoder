@@ -6,7 +6,7 @@
         <h4>Login Page</h4>
         <hr>
 
-        <form action="{{ route('login-user') }}" method="POST">
+        <form action="{{ route('login-user') }}" method="POST" class="p-3 col-6 bg-light rounded shadow">
             @if(Session::has('success'))
                 <div class="alert alert-success">{{ Session::get('success') }}</div>
             @endif

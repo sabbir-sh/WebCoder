@@ -40,6 +40,9 @@
                             <a href="{{ route('sabbir.edit', $user->id) }}" class="btn btn-sm btn-primary">
                                 Edit
                             </a>
+                            <a href="{{ route('sabbir.view', $user->id) }}" class="btn btn-sm btn-primary">
+                                view
+                            </a>
                             <!-- Delete Button -->
                             <form action="{{ route('sabbir.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
