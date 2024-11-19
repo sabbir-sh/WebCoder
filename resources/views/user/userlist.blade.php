@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
  <!-- Main Content -->
     <div class="container-fluid">
         <h4 class="text-primary">{{$welcome}}</h4>
@@ -37,18 +38,21 @@
                         <td>{{ $user->created_at->format('d M Y') }}</td>
                         <td>
                             <!-- Edit Button -->
-                            <a href="{{ route('sabbir.edit', $user->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('sabbir.edit', $user->id) }}" class="">
+                                <i class="fas fa-edit"></i>
                                 Edit
                             </a>
-                            <a href="{{ route('sabbir.view', $user->id) }}" class="btn btn-sm btn-primary">
+                            <a href="{{ route('sabbir.view', $user->id) }}" class="">
+                                <i class="fas fa-eye"></i>
                                 view
                             </a>
                             <!-- Delete Button -->
                             <form action="{{ route('sabbir.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger"
+                                <button type="submit" class=""
                                     onclick="return confirm('Are you sure you want to delete this user?')">
+                                    <i class="fas fa-trash-alt"></i>
                                     Delete
                                 </button>
                             </form>
