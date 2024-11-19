@@ -39,11 +39,11 @@
                         <td>
                             <!-- Edit Button -->
                             <a href="{{ route('sabbir.edit', $user->id) }}" class="">
-                                <i class="fas fa-edit"></i>
+                                <i class="fa-regular fa-pen-to-square"></i>
                                 Edit
                             </a>
                             <a href="{{ route('sabbir.view', $user->id) }}" class="">
-                                <i class="fas fa-eye"></i>
+                                <i class="fa-regular fa-eye"></i>
                                 view
                             </a>
                             <!-- Delete Button -->
@@ -52,7 +52,7 @@
                                 @method('DELETE')
                                 <button type="submit" class=""
                                     onclick="return confirm('Are you sure you want to delete this user?')">
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fa-solid fa-trash"></i>
                                     Delete
                                 </button>
                             </form>
