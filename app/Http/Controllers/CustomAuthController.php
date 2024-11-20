@@ -166,4 +166,20 @@ class CustomAuthController extends Controller
         // Redirect back with a success message
         return redirect()->route('listOfUser')->with('success', 'User created successfully!');
     }
+
+    public function showForgotPasswordForm()
+{
+    return view('auth.forgot-password');
+}
+
+public function handleForgotPassword(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email|exists:users,email',
+    ]);
+
+    // Implement password reset logic (e.g., send reset email).
+    return back()->with('success', 'Password reset link sent to your email.');
+}
+
 }

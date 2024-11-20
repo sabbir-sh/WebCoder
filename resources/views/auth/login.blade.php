@@ -25,13 +25,17 @@
                 <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
                 <span class="text-danger">@error('password') {{$message}}@enderror</span>
             </div>
-
+            <br>
             <div class="form-group">
                 <button class="btn btn-block btn-primary" type="submit">
                     Login
                 </button>
             </div>
-            <br>
+
+                         <!-- Forgot Password -->
+                         <div class="form-group text-left">
+                            <a href="{{ route('forgot-password') }}" class="text-primary">Forgot Password?</a>
+                        </div>
             <a href="{{ route('register') }}" class="btn btn-block btn-secondary"> New User !! Register Here </a>
 
             <br><br>

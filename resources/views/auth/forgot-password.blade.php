@@ -1,25 +1,29 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+@extends('layout')
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('content')
+<div class="container">
+    <h4 style="text-align: center">Forgot Password</h4>
+    <hr>
+    <form action="{{ route('handle-forgot-password') }}" method="POST" class="p-3 col-6 bg-light rounded shadow">
+        @if(Session::has('success'))
+            <div class="alert alert-success">{{ Session::get('success') }}</div>
+        @endif
 
-    <form method="POST" action="{{ route('password.email') }}">
+        @if(Session::has('fail'))
+            <div class="alert alert-danger">{{ Session::get('fail') }}</div>
+        @endif
         @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div class="form-group">
+            <label for="email">Enter Your Email</label>
+            <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+            <span class="text-danger">@error('email') {{$message}}@enderror</span>
         </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
+        <br>
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" type="submit">
+                Send Password Reset Link
+            </button>
         </div>
     </form>
-</x-guest-layout>
+</div>
+@endsection

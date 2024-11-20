@@ -31,6 +31,9 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::get('/user/create', [CustomAuthController::class, 'create'])->name('user.create');
     Route::post('/user/store', [CustomAuthController::class, 'store'])->name('user.store');
 
+    Route::get('/forgot-password', [CustomAuthController::class, 'showForgotPasswordForm'])->name('forgot-password');
+    Route::post('/forgot-password', [CustomAuthController::class, 'handleForgotPassword'])->name('handle-forgot-password');
+
 
 
 
