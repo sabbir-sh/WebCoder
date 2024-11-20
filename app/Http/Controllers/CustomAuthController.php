@@ -7,6 +7,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PasswordResetMail;
+use Illuminate\Support\Facades\Password;
 
 class CustomAuthController extends Controller
 {
@@ -179,7 +182,35 @@ public function handleForgotPassword(Request $request)
     ]);
 
     // Implement password reset logic (e.g., send reset email).
-    return back()->with('success', 'Password reset link sent to your email.');
+    return redirect('reset-password')->with('success', 'Password reset link sent to your email.');
+}
+
+public function showResetPasswordForm(Request $request)
+{
+    return view('auth.reset-password', ['token' => $request->query('token'), 'email' => $request->query('email')]);
+
+}
+
+public function resetPassword(Request $request)
+{
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|confirmed|min:6',
+    ]);
+
+    $status = Password::reset(
+        $request->only('email', 'password', 'password_confirmation', 'token'),
+        function ($user, $password) {
+            $user->forceFill([
+                'password' => Hash::make($password),
+            ])->save();
+        }
+    );
+
+    return $status === Password::PASSWORD_RESET
+        ? redirect()->route('login')->with('success', 'Password reset successfully.')
+        : back()->with('fail', 'Failed to reset password.');
 }
 
 }

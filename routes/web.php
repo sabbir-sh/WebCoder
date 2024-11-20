@@ -6,7 +6,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\UserController;
 
 Route::get('/',function(){
-    return view('welcome');
+    return view('home');
 });
 
 
@@ -34,6 +34,8 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::get('/forgot-password', [CustomAuthController::class, 'showForgotPasswordForm'])->name('forgot-password');
     Route::post('/forgot-password', [CustomAuthController::class, 'handleForgotPassword'])->name('handle-forgot-password');
 
+    Route::get('/reset-password', [CustomAuthController::class, 'showResetPasswordForm'])->name('reset-password');
+    Route::post('/reset-password', [CustomAuthController::class, 'resetPassword'])->name('handle-reset-password');
 
 
 
