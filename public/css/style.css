@@ -1,6 +1,30 @@
-.banner img {
-    width: 100%;
-    height: 50%;
-    border-radius: 5px; /* Optional for rounded edges */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for shadow effect */
+.carousel-item img {
+    height: 500px; /* Adjust height */
+    object-fit: cover; /* Ensures images fit properly */
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+.col-6 {
+    background-color: #f9f9f9; /* Light gray background */
+    border: 1px solid #ddd;   /* Subtle border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.col-6 h3 {
+    font-size: 1.5rem; /* Adjust font size */
+    color: #333;       /* Dark gray color */
+}
+
+.col-6 p {
+    color: #555;       /* Medium gray color for text */
+    font-size: 1rem;   /* Adjust font size */
 }
