@@ -21,6 +21,7 @@
                         <th>Phone</th>
                         <th>Gender</th>
                         <th>Bio</th>
+                        <th>Status</th>
                         <th>Created At</th>
                         <th>Actions</th>
                     </tr>
@@ -35,6 +36,7 @@
                         <td>{{ $user->phone }}</td>
                         <td>{{ $user->gender }}</td>
                         <td>{{ $user->bio }}</td>
+                        <td>{{ $user->status }}</td>
                         <td>{{ $user->created_at->format('d M Y') }}</td>
                         <td>
                             <!-- Edit Button -->

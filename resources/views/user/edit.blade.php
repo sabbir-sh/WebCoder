@@ -35,6 +35,18 @@
                 @enderror
             </div>
 
+            <!-- Status Field -->
+            <div class="mb-3">
+                <label for="status" class="form-label"> <strong>Status</strong></label>
+                <select name="status" id="status" class="form-control">
+                    <option value="active" {{ old('status', $user->status) == 'active' ? 'selected' : '' }}>Active</option>
+                    <option value="inactive" {{ old('status', $user->status) == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                </select>
+                @error('status')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
             <!-- Phone Field -->
             <div class="mb-3">
                 <label for="phone" class="form-label"> <strong>Phone</strong></label>
