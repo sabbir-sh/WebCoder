@@ -96,8 +96,6 @@ class CustomAuthController extends Controller
     {
         // Find the user by ID
         $user = User::findOrFail($id);
-
-        // Pass the user data to the 'user.edit' view
         return view('user.edit', compact('user'));
     }
 
