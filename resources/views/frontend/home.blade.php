@@ -62,17 +62,52 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-12 p-4 bg-light border rounded shadow">
+            <div class="col-3 p-4 bg-light border rounded shadow">
                 <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
                 <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed. This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
                     This is a simple col-6 box with text inside. You can add more content or customize it as needed.
                 </p>
             </div>
+
+            <div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+            </div>
+            <div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+            </div><div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+            </div><div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+            </div><div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+            </div><div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+            </div><div class="col-3 p-4 bg-light border rounded shadow">
+                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
+                <p class="text-center">
+                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
+                </p>
+
+
+
         </div>
     </div>
 
