@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyPolicyController;
+use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\UserController;
 
 //Home Page
@@ -20,6 +21,9 @@ Route::get("/contact", [ContactUsController::class,"contact"])->name("contact");
 
 //Privacy Policy
 Route::get("/privacy&policy", [PrivacyPolicyController::class,"PrivacyPolicy"])->name("Privacy.Policy");
+
+// Services
+Route::get("/services", [ServicesController::class,"services"])->name("services");
 
 
 

@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $homeServiceData = new HomeService();
         $data = $homeServiceData->homeSliderData();
-        $data['page_title'] = "Home Page";
+        $data['page_title'] = "Home Page ";
 
         return view('frontend.home', $data);
     }

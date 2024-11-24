@@ -8,9 +8,9 @@
 </style>
 @endsection
 @section('main-content')
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <h3 class="text-center title-design">{{ $page_title ?? "" }}</h3>
-    </div>
+    </div> --}}
     <!-- Main Content Section -->
     <div id="homepageSlider" class="carousel slide" data-bs-ride="carousel">
         <!-- Indicators -->
@@ -24,7 +24,7 @@
         <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
-                <img src="{{ asset('assets/slider1.webp') }}" class="d-block w-100" alt="Slide 1">
+                <img src="{{ asset('assets/banner_1.jpg') }}" class="d-block w-100" alt="Slide 1">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Welcome to Our Website</h5>
                     <p> {{ $banner_title1 }}</p>
@@ -32,7 +32,7 @@
             </div>
             <!-- Slide 2 -->
             <div class="carousel-item">
-                <img src="{{ asset('assets/slider2.jpg') }}" class="d-block w-100" alt="Slide 2">
+                <img src="{{ asset('assets/banner_2.jpg') }}" class="d-block w-100" alt="Slide 2">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Our Services</h5>
                     <p>{{ $banner_title2 }}.</p>
@@ -40,7 +40,7 @@
             </div>
             <!-- Slide 3 -->
             <div class="carousel-item">
-                <img src="{{ asset('assets/slider3.jpg') }}" class="d-block w-100" alt="Slide 3">
+                <img src="{{ asset('assets/banner_3.jpg') }}" class="d-block w-100" alt="Slide 3">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Join Us</h5>
                     <p>{{ $banner_title3 }}.</p>
