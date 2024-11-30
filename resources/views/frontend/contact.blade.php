@@ -8,57 +8,17 @@
 </style>
 @endsection
 @section('main-content')
-
+{{--
     <div class="container-fluid">
         <h3 class="text-center title-design">{{ $page_title }}</h3>
+    </div> --}}
+    <div class="image-container position-relative">
+        <img src="{{ asset('assets/AboutUs_banner.jpg') }}" class="d-block w-100" alt="About Us Banner">
+        <div class="text-overlay">
+            <h3 class="text-center">{{ $page_title }}</h3>
+        </div>
     </div>
  <!-- Main Content Section -->
- <div id="homepageSlider" class="carousel slide" data-bs-ride="carousel">
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#homepageSlider" data-bs-slide-to="0" class="active" aria-current="true"></button>
-        <button type="button" data-bs-target="#homepageSlider" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#homepageSlider" data-bs-slide-to="2"></button>
-    </div>
-
-    <!-- Slider Items -->
-    <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-            <img src="{{ asset('assets/banner_1.jpg') }}" class="d-block w-100" alt="Slide 1">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Welcome to Our Website</h5>
-                <p> {{ $banner_title1 }}</p>
-            </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <img src="{{ asset('assets/banner_2.jpg') }}" class="d-block w-100" alt="Slide 2">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Our Services</h5>
-                <p>{{ $banner_title2 }}.</p>
-            </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-            <img src="{{ asset('assets/banner_3.jpg') }}" class="d-block w-100" alt="Slide 3">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Join Us</h5>
-                <p>{{ $banner_title3 }}.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#homepageSlider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#homepageSlider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
 
 
 

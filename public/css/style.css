@@ -28,3 +28,20 @@
     color: #555;       /* Medium gray color for text */
     font-size: 1rem;   /* Adjust font size */
 }
+.image-container {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden; /* Optional: ensures no unwanted overflow */
+}
+.text-overlay {
+    position: absolute; /* Positions the text over the image */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts position back to the true center */
+    color: white; /* Makes the text white */
+    text-align: center; /* Aligns the text in the center */
+    font-size: 2rem; /* Adjust size as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: adds a semi-transparent background */
+    padding: 10px; /* Optional: adds padding around the text */
+    border-radius: 5px; /* Optional: makes the edges rounded */
+}

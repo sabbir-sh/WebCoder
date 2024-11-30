@@ -8,8 +8,14 @@
 </style>
 @endsection
 @section('main-content')
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <h3 class="text-center">{{ $page_title }}</h3>
+    </div> --}}
+    <div class="image-container position-relative">
+        <img src="{{ asset('assets/AboutUs_banner.jpg') }}" class="d-block w-100" alt="About Us Banner">
+        <div class="text-overlay">
+            <h3 class="text-center">{{ $page_title }}</h3>
+        </div>
     </div>
  <!-- Main Content Section -->
     <div class="container mt-5">
