@@ -23,6 +23,9 @@
                         <a class="nav-link active" href="{{ route('Privacy.Policy') }}"> Privacy Policy </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('terms') }}"> Term Conditions </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link " href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">

@@ -1,11 +1,11 @@
 @extends('frontend.layout.app')
 
 @section('custom-style')
-<style>
+{{-- <style>
     .title-design {
         color:red;
     }
-</style>
+</style> --}}
 @endsection
 @section('main-content')
     {{-- <div class="container-fluid">

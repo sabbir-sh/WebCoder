@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyPolicyController;
 use App\Http\Controllers\Frontend\ServicesController;
+use App\Http\Controllers\frontend\TarmAndConditionsController;
 use App\Http\Controllers\UserController;
 
 //Home Page
@@ -24,6 +25,9 @@ Route::get("/privacy&policy", [PrivacyPolicyController::class,"PrivacyPolicy"])-
 
 // Services
 Route::get("/services", [ServicesController::class,"services"])->name("services");
+
+// Term Conditions Page
+Route::get("/terms", [TarmAndConditionsController::class,"terms"])->name("terms");
 
 
 
