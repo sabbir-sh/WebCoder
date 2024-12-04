@@ -70,9 +70,10 @@ class CustomAuthController extends Controller
 
     public function dashboard()
     {
+
         $data['page_title'] = 'User Profile';
         $data['data'] = Auth::user();
-        return view('dashboard', $data);
+        return view('backend.dashboard', $data);
     }
 
     public function logout(Request $request)
@@ -80,7 +81,7 @@ class CustomAuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login');
+        return redirect()->route('backend.login');
     }
 
     public function userList()
@@ -88,7 +89,7 @@ class CustomAuthController extends Controller
         $da['welcome'] = 'Welcome To User List Page';
         $da['title'] = 'All User Lists';
         $da['users'] = User::orderBy('id','desc')->get();
-        return view('user.userList', $da);
+        return view('backend.user.userList', $da);
     }
 
 
@@ -96,7 +97,7 @@ class CustomAuthController extends Controller
     {
         // Find the user by ID
         $user = User::findOrFail($id);
-        return view('user.edit', compact('user'));
+        return view('backend.user.edit', compact('user'));
     }
 
     public function view($id)
@@ -105,7 +106,7 @@ class CustomAuthController extends Controller
         $user = User::findOrFail($id);
 
         // Pass the user data to the 'user.edit' view
-        return view('user.view', compact('user'));
+        return view('backend.user.view', compact('user'));
     }
 
     public function update(Request $request, $id)
@@ -138,7 +139,7 @@ class CustomAuthController extends Controller
     public function create()
     {
 
-        return view('user.create');
+        return view('backend.user.create');
     }
 
     public function store(Request $request)
@@ -207,7 +208,7 @@ public function resetPassword(Request $request)
     );
 
     return $status === Password::PASSWORD_RESET
-        ? redirect()->route('login')->with('success', 'Password reset successfully.')
+        ? redirect()->route('auth.login')->with('success', 'Password reset successfully.')
         : back()->with('fail', 'Failed to reset password.');
 }
 

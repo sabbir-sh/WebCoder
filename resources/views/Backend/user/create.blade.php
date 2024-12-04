@@ -1,5 +1,5 @@
 <!-- resources/views/users/create.blade.php -->
-@extends('layout')
+@extends('backend.layout')
 @section('content')
 <div class="container">
     <h2 style="text-align: center">Create New User</h2>

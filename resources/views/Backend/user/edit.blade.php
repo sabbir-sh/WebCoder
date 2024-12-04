@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('backend.layout')
 @section('content')
     <!-- Main Content -->
     <div class="main-content">

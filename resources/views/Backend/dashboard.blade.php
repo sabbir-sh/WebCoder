@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <title>Custom Authentication</title>
+    <title> Admin Dashboard </title>
     <style>
         body {
             min-height: 100vh;
@@ -79,15 +79,14 @@
         <div class="collapse ps-3" id="userSubMenu">
             <a href="{{ route('listOfUser') }}">User List</a>
         </div>
-        <a href="{{ route('login') }}">Login</a>
-        <a href="{{ route('register') }}">Register</a>
+<hr>
         <a href="{{ route('logOut') }}">Logout</a>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Admin Dashboard</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -96,9 +95,21 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <!-- Show User's Name -->
+                        @if(Auth::check())
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                   {{ Auth::user()->name }}
+                                </a>
+                            </li>
+                        @endif
+
+                        <!-- Profile Link -->
                         <li class="nav-item">
                             <a class="nav-link" href="#">Profile</a>
                         </li>
+
+                        <!-- Logout Link -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logOut') }}">Logout</a>
                         </li>
@@ -107,30 +118,9 @@
             </div>
         </nav>
 
+
         <!-- Content -->
-        <div class="table-container mt-4">
-            <h4>Welcome to Dashboard</h4>
-            <hr>
-            <table class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{ $data->name }}</td>
-                        <td>{{ $data->email }}</td>
-                        <td>{{ $data->phone }}</td>
-                        <td><a href="{{ route('logOut') }}" class="btn btn-danger btn-sm">Logout</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
