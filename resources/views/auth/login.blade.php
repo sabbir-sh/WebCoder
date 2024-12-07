@@ -3,7 +3,7 @@
 @section('content')
     <!-- Main Content Container -->
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h4 class="text-center mb-4">Login Page</h4>
             <hr>
             <form action="{{ route('login-user') }}" method="POST" class="p-4 bg-light rounded shadow">

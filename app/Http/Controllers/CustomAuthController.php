@@ -81,7 +81,7 @@ class CustomAuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('backend.login');
+        return redirect()->route("login");
     }
 
     public function userList()

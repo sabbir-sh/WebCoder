@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title> Admin Dashboard </title>
     <style>
@@ -18,7 +12,7 @@
 
         .sidebar {
             width: 250px;
-            background-color: #343a40;
+            background-color: #020202;
             color: white;
             height: 100vh;
             position: fixed;
@@ -50,7 +44,6 @@
 
         .main-content {
             margin-left: 250px;
-            padding: 20px;
             width: calc(100% - 250px);
         }
 
@@ -62,7 +55,7 @@
         }
 
         .navbar {
-            background-color: #343a40;
+            background-color: #000000;
         }
 
         .navbar a {
@@ -79,7 +72,17 @@
         <div class="collapse ps-3" id="userSubMenu">
             <a href="{{ route('listOfUser') }}">User List</a>
         </div>
-<hr>
+
+
+
+
+
+
+
+
+
+
+        <hr>
         <a href="{{ route('logOut') }}">Logout</a>
     </div>
 

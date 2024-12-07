@@ -16,7 +16,7 @@
         }
 
         .sidebar {
-            width: 250px;
+            width: 200px;
             background-color: #343a40;
             color: white;
             height: 100vh;
@@ -43,22 +43,12 @@
 
         .main-content {
             margin-left: 250px;
-            padding: 20px;
             flex-grow: 1;
         }
     </style>
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h3>Dashboard</h3>
-        <a href="{{ route('login') }}">Login</a>
-        <a href="{{ route('register') }}">Register</a>
-        <a href="{{ route('listOfUser') }}">User List</a>
-        <a href="{{ route('logOut') }}">Logout</a>
-    </div>
-
     <!-- Main Content -->
     <div class="main-content">
         @yield('content')
