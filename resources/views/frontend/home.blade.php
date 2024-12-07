@@ -60,54 +60,32 @@
     </div>
 
 
-    <div class="container mt-5">
+
+    <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
+            <!-- Apple -->
+            <div class="col-4 col-md-3 mb-4">
+                <img src="{{ asset('assets/apple.webp') }}" alt="Apple Certified Technician" class="img-fluid mb-2">
+                <p>Certified Technician</p>
             </div>
 
-            <div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
+            <!-- Dell -->
+            <div class="col-4 col-md-3 mb-4">
+                <img src="{{ asset('assets/dell.webp') }}" alt="Dell Authorized Service Center" class="img-fluid mb-2">
+                <p>Authorized Service Center</p>
             </div>
-            <div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
-            </div><div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
-            </div><div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
-            </div><div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
-            </div><div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
-            </div><div class="col-3 p-4 bg-light border rounded shadow">
-                <h3 class="text-center">Welcome to Bio-Xin Cosmeceuticals</h3>
-                <p class="text-center">
-                    This is a simple col-6 box with text inside. You can add more content or customize it as needed.
-                </p>
 
+            <!-- HP -->
+            <div class="col-4 col-md-3 mb-4">
+                <img src="{{ asset('assets/hp.webp') }}" alt="HP Authorized Service Center" class="img-fluid mb-2">
+                <p>Authorized Service Center</p>
+            </div>
 
-
+            <!-- Lenovo -->
+            <div class="col-4 col-md-3 mb-4">
+                <img src="{{ asset('assets/lenovo.webp') }}" alt="Lenovo Authorized Service Partner" class="img-fluid mb-2">
+                <p>Authorized Service Partner</p>
+            </div>
         </div>
     </div>
 
