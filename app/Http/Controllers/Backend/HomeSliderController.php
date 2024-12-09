@@ -1,0 +1,84 @@
+<?php
+
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
+use App\Models\HomeSlider;
+use Illuminate\Http\Request;
+
+class HomeSliderController extends Controller
+{
+    public function index()
+    {
+        $sliders = HomeSlider::all();
+        return view('backend.slider.homeslider', compact('sliders'));
+    }
+
+    /**
+     * Show the form for creating a new slider.
+     */
+    public function create()
+    {
+        return view('backend.slider.create');
+    }
+
+    /**
+     * Store a newly created slider in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'photo' => 'required',
+            'title' => 'required|string',
+            'subtitle' => 'nullable|string',
+            'offer' => 'nullable|string',
+            'published' => 'required|boolean',
+            'link' => 'nullable|string',
+        ]);
+
+        HomeSlider::create($request->all());
+
+        return redirect()->route('adminHomeSlider')->with('success', 'Slider created successfully.');
+    }
+
+    /**
+     * Show the form for editing the specified slider.
+     */
+    public function edit($id)
+    {
+        $slider = HomeSlider::findOrFail($id);
+        return view('backend.slider.edit', compact('slider'));
+    }
+
+    /**
+     * Update the specified slider in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        $slider = HomeSlider::findOrFail($id);
+
+        $request->validate([
+            'photo' => 'required',
+            'title' => 'required|string',
+            'subtitle' => 'nullable|string',
+            'offer' => 'nullable|string',
+            'published' => 'required|boolean',
+            'link' => 'nullable|string',
+        ]);
+
+        $slider->update($request->all());
+
+        return redirect()->route('adminHomeSlider')->with('success', 'Slider updated successfully.');
+    }
+
+    /**
+     * Remove the specified slider from storage.
+     */
+    public function destroy($id)
+    {
+        $slider = HomeSlider::findOrFail($id);
+        $slider->delete();
+
+        return redirect()->route('adminHomeSlider')->with('success', 'Slider deleted successfully.');
+    }
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\HomeSliderController;
 use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,6 +66,17 @@ Route::group(['middleware'=> 'auth'], function(){
 
 
 
+
+
+});
+
+Route::prefix('admin/home/slider')->group(function () {
+    Route::get('/', [HomeSliderController::class, 'index'])->name('adminHomeSlider');
+    Route::get('/create', [HomeSliderController::class, 'create'])->name('adminHomeSlider.create');
+    Route::post('/store', [HomeSliderController::class, 'store'])->name('adminHomeSlider.store');
+    Route::get('/edit/{id}', [HomeSliderController::class, 'edit'])->name('adminHomeSlider.edit');
+    Route::put('/update/{id}', [HomeSliderController::class, 'update'])->name('adminHomeSlider.update');
+    Route::delete('/delete/{id}', [HomeSliderController::class, 'destroy'])->name('adminHomeSlider.destroy');
 });
 
 

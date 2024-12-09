@@ -73,7 +73,7 @@
             <a href="{{ route('listOfUser') }}">User List</a>
         </div>
 
-
+        <a href="{{ route('adminHomeSlider') }}">Home Slider</a>
 
 
 
