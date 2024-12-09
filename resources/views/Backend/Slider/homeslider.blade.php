@@ -32,7 +32,12 @@
                         <td>{{ $slider->position }}</td>
                         <td>{{ $slider->subtitle }}</td>
                         <td>{{ $slider->offer }}</td>
-                        <td>{{ $slider->published ? 'Yes' : 'No' }}</td>
+                        <td>
+                            <label class="aiz-switch aiz-switch-success mb-0">
+                                <input onchange="update_status(this)" value="{{ $slider->id }}" type="checkbox" <?php if($slider->published == 1) echo "checked";?> >
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
                         <td><b>{{ $slider->link }}</b></a></td>
                         <td>
                             <a href="{{ route('adminHomeSlider.edit', $slider->id) }}" class="btn btn-primary btn-sm">Edit</a>

@@ -1,10 +1,17 @@
-@extends('backend.layout')
+@extends('frontend.layout.app')
 
-@section('content')
-<div class="container">
-    <h4 style="text-align: center">Forgot Password</h4>
-    <hr>
-    <form action="{{ route('handle-forgot-password') }}" method="POST" class="p-3 col-6 bg-light rounded shadow">
+@section('custom-style')
+<style>
+
+</style>
+@endsection
+@section('main-content')
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-4">
+        <h4 class="text-center mb-4">Forgot Password</h4>
+        <hr>
+    <form action="{{ route('handle-forgot-password') }}" method="POST" class="p-3 bg-light rounded shadow">
         @if(Session::has('success'))
             <div class="alert alert-success">{{ Session::get('success') }}</div>
         @endif
@@ -25,5 +32,14 @@
             </button>
         </div>
     </form>
+
+    </div>
 </div>
+
 @endsection
+@section('custom-script')
+<script>
+
+</script>
+@endsection
+

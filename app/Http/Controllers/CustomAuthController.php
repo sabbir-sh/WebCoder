@@ -15,7 +15,8 @@ class CustomAuthController extends Controller
 {
     public function login()
     {
-        return view("auth.login");
+        $data['page_title'] = "Login";
+        return view("auth.login",$data);
     }
 
     public function register()

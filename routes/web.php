@@ -12,64 +12,73 @@ use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\frontend\TarmAndConditionsController;
 use App\Http\Controllers\UserController;
 
-//Home Page
-Route::get("/", [HomeController::class,"index"])->name("home");
 
-//About Us Page
-Route::get("/about", [AboutUsController::class,"about"])->name("about");
+// Frontend View
+    //Home Page
+    Route::get("/", [HomeController::class,"index"])->name("home");
 
-//Contact Us page
-Route::get("/contact", [ContactUsController::class,"contact"])->name("contact");
+    //About Us Page
+    Route::get("/about", [AboutUsController::class,"about"])->name("about");
 
-//Privacy Policy
-Route::get("/privacy&policy", [PrivacyPolicyController::class,"PrivacyPolicy"])->name("Privacy.Policy");
+    //Contact Us page
+    Route::get("/contact", [ContactUsController::class,"contact"])->name("contact");
 
-// Services
-Route::get("/services", [ServicesController::class,"services"])->name("services");
+    //Privacy Policy
+    Route::get("/privacy&policy", [PrivacyPolicyController::class,"PrivacyPolicy"])->name("Privacy.Policy");
 
-// Term Conditions Page
-Route::get("/terms", [TarmAndConditionsController::class,"terms"])->name("terms");
+    // Services
+    Route::get("/services", [ServicesController::class,"services"])->name("services");
 
-
-
-
+    // Term Conditions Page
+    Route::get("/terms", [TarmAndConditionsController::class,"terms"])->name("terms");
 
 
 
 
-Route::get('/user/login', [CustomAuthController::class, 'login'])->name('login');
-Route::get('/user/register', [CustomAuthController::class, 'register'])->name('register');
-Route::post('/user/register-user', [CustomAuthController::class, 'registerUser'])->name('register-user');
-Route::post('/user/login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
-
-Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logOut')->middleware('auth');
-
-Route::group(['middleware'=> 'auth'], function(){
-    Route::get('admin/dashboard', [CustomAuthController::class, 'dashboard'])->name('adminDashboard');
-    Route::get('/user/list', [CustomAuthController::class, 'userList'])->name('listOfUser');
 
 
 
-    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('sabbir.edit'); // Edit user
-    Route::get('/users/{id}/view', [CustomAuthController::class, 'view'])->name('sabbir.view'); // Edit user
-    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update'); // Update user
-    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
+    // Login User
 
-    Route::get('/user/create', [CustomAuthController::class, 'create'])->name('user.create');
-    Route::post('/user/store', [CustomAuthController::class, 'store'])->name('user.store');
+    Route::get('login', [CustomAuthController::class, 'login'])->name('login');
+    Route::get('register', [CustomAuthController::class, 'register'])->name('register');
+    Route::post('register-user', [CustomAuthController::class, 'registerUser'])->name('register-user');
+    Route::post('login-user', [CustomAuthController::class, 'loginUser'])->name('login-user');
 
+    //Forgot Password
     Route::get('/forgot-password', [CustomAuthController::class, 'showForgotPasswordForm'])->name('forgot-password');
     Route::post('/forgot-password', [CustomAuthController::class, 'handleForgotPassword'])->name('handle-forgot-password');
 
+    //Reset Password
     Route::get('/reset-password', [CustomAuthController::class, 'showResetPasswordForm'])->name('reset-password');
     Route::post('/reset-password', [CustomAuthController::class, 'resetPassword'])->name('handle-reset-password');
 
 
 
 
+Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logOut')->middleware('auth');
+
+Route::group(['middleware'=> 'auth'], function(){
+
+    // Dashboard
+    Route::get('admin/dashboard', [CustomAuthController::class, 'dashboard'])->name('adminDashboard');
+
+    // User End
+    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('sabbir.edit');
+    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update');
+    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
+    Route::get('/users/{id}/view', [CustomAuthController::class, 'view'])->name('sabbir.view');
+
+    Route::get('/user/create', [CustomAuthController::class, 'create'])->name('user.create');
+    Route::post('/user/store', [CustomAuthController::class, 'store'])->name('user.store');
+
+    Route::get('/user/list', [CustomAuthController::class, 'userList'])->name('listOfUser');
+
 
 });
 
+
+// Slider
 Route::prefix('admin/home/slider')->group(function () {
     Route::get('/', [HomeSliderController::class, 'index'])->name('adminHomeSlider');
     Route::get('/create', [HomeSliderController::class, 'create'])->name('adminHomeSlider.create');
