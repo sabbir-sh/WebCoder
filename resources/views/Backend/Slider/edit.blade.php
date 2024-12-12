@@ -86,17 +86,22 @@
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Photo') }}</label>
                 <div class="col-lg-8">
+                    <!-- File Input -->
                     <div class="custom-file">
                         <input type="file" name="photo" class="custom-file-input" accept="image/*">
                         <label class="custom-file-label">{{ __('Choose File') }}</label>
                     </div>
+
+                    <!-- Display Old Photo -->
                     @if(isset($slider) && $slider->photo)
                         <div class="mt-2">
                             <img src="{{ asset($slider->photo) }}" alt="Current Image" class="img-thumbnail" style="width: 150px;">
+                            <p class="text-muted mt-1">{{ __('Current Photo') }}</p>
                         </div>
                     @endif
                 </div>
             </div>
+
 
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Published') }}</label>

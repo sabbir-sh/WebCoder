@@ -1,11 +1,13 @@
-@extends('backend.layout')
+@extends('Backend.layout.app')
 
+@section('custom-style')
+<style>
 
+</style>
+@endsection
+@section('main-content')
 
-@section('content')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
- <!-- Main Content -->
- <div class="container-fluid my-4">
+<div class="container-fluid my-4">
     <h4 class="text-primary">{{ $welcome }}</h4>
     <h4 class="text-secondary">{{ $title }}</h4>
     <a href="{{ route('user.create') }}" class="btn btn-success btn-sm mb-3" title="Add User">Add User</a>
@@ -76,4 +78,9 @@
     @endif
 </div>
 
-    @endsection
+@endsection
+@section('custom-script')
+<script>
+
+</script>
+@endsection

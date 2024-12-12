@@ -58,35 +58,10 @@ use App\Http\Controllers\UserController;
 
 Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logOut')->middleware('auth');
 
-Route::group(['middleware'=> 'auth'], function(){
-
-    // Dashboard
-    Route::get('admin/dashboard', [CustomAuthController::class, 'dashboard'])->name('adminDashboard');
-
-    // User End
-    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('sabbir.edit');
-    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update');
-    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
-    Route::get('/users/{id}/view', [CustomAuthController::class, 'view'])->name('sabbir.view');
-
-    Route::get('/user/create', [CustomAuthController::class, 'create'])->name('user.create');
-    Route::post('/user/store', [CustomAuthController::class, 'store'])->name('user.store');
-
-    Route::get('/user/list', [CustomAuthController::class, 'userList'])->name('listOfUser');
+require base_path('routes/admin.php');
 
 
-});
 
-
-// Slider
-Route::prefix('admin/home/slider')->group(function () {
-    Route::get('/', [HomeSliderController::class, 'index'])->name('adminHomeSlider');
-    Route::get('/create', [HomeSliderController::class, 'create'])->name('adminHomeSlider.create');
-    Route::post('/store', [HomeSliderController::class, 'store'])->name('adminHomeSlider.store');
-    Route::get('/edit/{id}', [HomeSliderController::class, 'edit'])->name('adminHomeSlider.edit');
-    Route::put('/update/{id}', [HomeSliderController::class, 'update'])->name('adminHomeSlider.update');
-    Route::delete('/delete/{id}', [HomeSliderController::class, 'destroy'])->name('adminHomeSlider.destroy');
-});
 
 
 

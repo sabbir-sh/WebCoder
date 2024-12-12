@@ -28,7 +28,7 @@ class HomeSliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'photo' => 'required',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'title' => 'required|string',
             'subtitle' => 'nullable|string',
             'offer' => 'nullable|string',
@@ -58,7 +58,7 @@ class HomeSliderController extends Controller
         $slider = HomeSlider::findOrFail($id);
 
         $request->validate([
-            'photo' => 'required',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'title' => 'required|string',
             'subtitle' => 'nullable|string',
             'offer' => 'nullable|string',
@@ -81,4 +81,16 @@ class HomeSliderController extends Controller
 
         return redirect()->route('adminHomeSlider')->with('success', 'Slider deleted successfully.');
     }
+
+    public function updateStatus(Request $request)
+{
+    $slider = HomeSlider::find($request->id);
+    if ($slider) {
+        $slider->published = $request->published;
+        $slider->save();
+        return response()->json(['success' => true]);
+    }
+    return response()->json(['success' => false]);
+}
+
 }
