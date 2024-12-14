@@ -28,7 +28,7 @@ class HomeSliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'title' => 'required|string',
             'subtitle' => 'nullable|string',
             'offer' => 'nullable|string',
@@ -58,7 +58,7 @@ class HomeSliderController extends Controller
         $slider = HomeSlider::findOrFail($id);
 
         $request->validate([
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'title' => 'required|string',
             'subtitle' => 'nullable|string',
             'offer' => 'nullable|string',

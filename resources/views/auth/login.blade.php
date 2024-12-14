@@ -8,7 +8,7 @@
 @section('main-content')
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="col-md-4">
+    <div class="col-md-6 col-lg-5">
         <h4 class="text-center mb-4">Login Page</h4>
         <hr>
         <form action="{{ route('login-user') }}" method="POST" class="p-4 bg-light rounded shadow">
@@ -37,17 +37,17 @@
 
             <!-- Login Button -->
             <div class="form-group mb-3">
-                <button class="btn btn-primary w-100" type="submit">Login</button>
+                <button class="btn btn-primary" type="submit">Login</button>
             </div>
 
             <!-- Forgot Password Link -->
-            <div class="form-group mb-3 text-center">
+            <div class="form-group mb-3">
                 <a href="{{ route('forgot-password') }}" class="text-primary">Forgot Password?</a>
             </div>
 
             <!-- Register Button -->
             <div class="form-group">
-                <a href="{{ route('register') }}" class="btn btn-secondary w-100">New User? Register Here</a>
+                <a href="{{ route('register') }}" class="btn btn-secondary">New User? Register Here</a>
             </div>
         </form>
     </div>
