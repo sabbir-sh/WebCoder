@@ -1,5 +1,11 @@
-@extends('backend.layout')
-@section('content')
+@extends('Backend.layout.app')
+
+@section('custom-style')
+<style>
+
+</style>
+@endsection
+@section('main-content')
     <!-- Main Content -->
     <div class="main-content">
         <h4 class="text-primary" style="text-align: center">Edit User</h4>

@@ -7,7 +7,7 @@
 @endsection
 @section('main-content')
 
-<h2 class="text-center">admin dashboard</h2>
+<h2 class="text-center">Admin dashboard</h2>
 
 @endsection
 @section('custom-script')

@@ -1,6 +1,11 @@
-<!-- resources/views/users/create.blade.php -->
-@extends('backend.layout')
-@section('content')
+@extends('Backend.layout.app')
+
+@section('custom-style')
+<style>
+
+</style>
+@endsection
+@section('main-content')
 <div class="container">
     <h2 style="text-align: center">Create New User</h2>
     <form action="{{ route('user.store') }}" method="POST">

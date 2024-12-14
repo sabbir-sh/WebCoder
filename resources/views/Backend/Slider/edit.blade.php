@@ -1,6 +1,11 @@
-@extends('backend.layout')
+@extends('Backend.layout.app')
 
-@section('content')
+@section('custom-style')
+<style>
+
+</style>
+@endsection
+@section('main-content')
 <div class="card">
     <div class="card-header">
         <h5 class="mb-0 h6">{{ isset($slider) ? __('Edit Slider') : __('Add Slider') }}</h5>

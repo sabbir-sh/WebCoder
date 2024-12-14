@@ -1,54 +1,11 @@
-@extends('backend.layout')
+@extends('Backend.layout.app')
 
-@section('content')
-
+@section('custom-style')
 <style>
-    .form-switch {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-}
-
-.form-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 20px;
-    transition: 0.4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
-}
-
-input:checked + .slider {
-    background-color: #0aa07a;
-}
-
-input:checked + .slider:before {
-    transform: translateX(14px);
-}
 
 </style>
+@endsection
+@section('main-content')
     <div class="container mt-4">
         <h1 class="text-center mb-4">Home Sliders</h1>
         <a href="{{ route('adminHomeSlider.create') }}" class="btn btn-success mb-3">Add New Slider</a>
