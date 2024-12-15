@@ -46,14 +46,14 @@
                     <input type="text" class="form-control" name="name" placeholder="{{ __('Enter Product Name') }}" value="{{ old('name') }}" required>
                 </div>
             </div>
-
+<br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Description') }}</label>
                 <div class="col-lg-8">
                     <textarea class="form-control" name="description" placeholder="{{ __('Enter Product Description') }}">{{ old('description') }}</textarea>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Photo') }}</label>
                 <div class="col-lg-8">
@@ -63,21 +63,21 @@
                     </div>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Price') }}</label>
                 <div class="col-lg-8">
                     <input type="number" class="form-control" name="price" placeholder="{{ __('Enter Product Price') }}" step="0.01" value="{{ old('price') }}" required>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Quantity') }}</label>
                 <div class="col-lg-8">
                     <input type="number" class="form-control" name="quantity" placeholder="{{ __('Enter Product Quantity') }}" value="{{ old('quantity') }}" required>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Published') }}</label>
                 <div class="col-lg-8">
@@ -87,7 +87,7 @@
                     </select>
                 </div>
             </div>
-
+            <br>
             <div class="form-group mb-0 text-right">
                 <button type="submit" class="btn btn-primary">{{ __('Add Product') }}</button>
             </div>

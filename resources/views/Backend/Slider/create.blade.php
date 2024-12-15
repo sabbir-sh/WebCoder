@@ -45,35 +45,35 @@
                     <input type="text" class="form-control" name="title" placeholder="{{ __('Enter Slider Title') }}" value="{{ old('title') }}" required>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Subtitle') }}</label>
                 <div class="col-lg-8">
                     <input type="text" class="form-control" name="subtitle" placeholder="{{ __('Enter Slider Subtitle') }}" value="{{ old('subtitle') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Position') }}</label>
                 <div class="col-lg-8">
                     <input type="text" class="form-control" name="position" placeholder="{{ __('Enter Slider Position') }}" value="{{ old('position') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Offer') }}</label>
                 <div class="col-lg-8">
                     <input type="text" class="form-control" name="offer" placeholder="{{ __('Enter Offer Details') }}" value="{{ old('offer') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Link') }}</label>
                 <div class="col-lg-8">
                     <input type="url" class="form-control" name="link" placeholder="{{ __('Enter Slider Link') }}" value="{{ old('link') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Photo') }}</label>
                 <div class="col-lg-8">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Published') }}</label>
                 <div class="col-lg-8">
@@ -93,7 +93,7 @@
                     </select>
                 </div>
             </div>
-
+            <br>
             <div class="form-group mb-0 text-right">
                 <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
             </div>

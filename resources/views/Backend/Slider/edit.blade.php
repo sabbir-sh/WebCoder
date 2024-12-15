@@ -51,7 +51,7 @@
                            value="{{ isset($slider) ? $slider->title : old('title') }}" required>
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Subtitle') }}</label>
                 <div class="col-lg-8">
@@ -60,7 +60,7 @@
                            value="{{ isset($slider) ? $slider->subtitle : old('subtitle') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Position') }}</label>
                 <div class="col-lg-8">
@@ -69,7 +69,7 @@
                            value="{{ isset($slider) ? $slider->position : old('position') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Offer') }}</label>
                 <div class="col-lg-8">
@@ -78,7 +78,7 @@
                            value="{{ isset($slider) ? $slider->offer : old('offer') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Link') }}</label>
                 <div class="col-lg-8">
@@ -87,7 +87,7 @@
                            value="{{ isset($slider) ? $slider->link : old('link') }}">
                 </div>
             </div>
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Photo') }}</label>
                 <div class="col-lg-8">
@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-
+            <br>
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">{{ __('Published') }}</label>
                 <div class="col-lg-8">
@@ -117,7 +117,7 @@
                     </select>
                 </div>
             </div>
-
+            <br>
             <div class="form-group mb-0 text-right">
                 <button type="submit" class="btn btn-primary">{{ isset($slider) ? __('Update') : __('Save') }}</button>
             </div>
