@@ -66,64 +66,122 @@
             <!-- Apple -->
             <div class="col-4 col-md-3 mb-4">
                 <img src="{{ asset('assets/apple.webp') }}" alt="Apple Certified Technician" class="img-fluid mb-2">
-                <p>Certified Technician</p>
+
             </div>
 
             <!-- Dell -->
             <div class="col-4 col-md-3 mb-4">
                 <img src="{{ asset('assets/dell.webp') }}" alt="Dell Authorized Service Center" class="img-fluid mb-2">
-                <p>Authorized Service Center</p>
+
             </div>
 
             <!-- HP -->
             <div class="col-4 col-md-3 mb-4">
                 <img src="{{ asset('assets/hp.webp') }}" alt="HP Authorized Service Center" class="img-fluid mb-2">
-                <p>Authorized Service Center</p>
+
             </div>
 
             <!-- Lenovo -->
             <div class="col-4 col-md-3 mb-4">
                 <img src="{{ asset('assets/lenovo.webp') }}" alt="Lenovo Authorized Service Partner" class="img-fluid mb-2">
-                <p>Authorized Service Partner</p>
+
             </div>
         </div>
     </div>
+
+ {{-- Section 2 --}}
     <div class="row">
-        <div class="col-md-4">
-            <div class="container">
-            <h2 class="mt-5 mb-4" style="text-align: center">Contact Us</h2>
-            <form>
-                <!-- Name Input -->
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            <div class="col-md-12">
+                <div class="container">
+                    <h2 class="mt-5 mb-4" style="text-align: center">Featured Services</h2>
                 </div>
+            </div>
 
-                <!-- Email Input -->
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            <div class="col-md-2">
+                <a href="{{ url('/desktop-services') }}" class="text-decoration-none">
+
+                    <div class="container text-center">
+                        <!-- Image Section -->
+                        <img src="{{ asset('assets/desktop.webp') }}"
+                             alt="Featured Services"
+                             class="img-fluid mb-3"
+                             style="max-width: 100%; height: auto;">
+
+                        <!-- Heading Section -->
+                        <h5 class="mt-3 mb-4">Desktop Services <br>
+                            Starts from: 500৳</h5>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-2">
+                <div class="container text-center">
+                    <!-- Image Section -->
+                    <img src="{{ asset('assets/desktop.webp') }}"
+                         alt="Featured Services"
+                         class="img-fluid mb-3"
+                         style="max-width: 100%; height: auto;">
+
+                    <!-- Heading Section -->
+                    <h5 class="mt-3 mb-4">Desktop Services <br>
+                        Starts from: 500৳</h5>
                 </div>
+            </div>
 
-                <!-- Subject Input -->
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+            <div class="col-md-2">
+                <div class="container text-center">
+                    <!-- Image Section -->
+                    <img src="{{ asset('assets/desktop.webp') }}"
+                         alt="Featured Services"
+                         class="img-fluid mb-3"
+                         style="max-width: 100%; height: auto;">
+
+                    <!-- Heading Section -->
+                    <h5 class="mt-3 mb-4">Desktop Services <br>
+                        Starts from: 500৳</h5>
                 </div>
+            </div>
+            <div class="col-md-2">
+                <div class="container text-center">
+                    <!-- Image Section -->
+                    <img src="{{ asset('assets/desktop.webp') }}"
+                         alt="Featured Services"
+                         class="img-fluid mb-3"
+                         style="max-width: 100%; height: auto;">
 
-                <!-- Message Textarea -->
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message" required></textarea>
+                    <!-- Heading Section -->
+                    <h5 class="mt-3 mb-4">Desktop Services <br>
+                        Starts from: 500৳</h5>
                 </div>
+            </div>
+            <div class="col-md-2">
+                <div class="container text-center">
+                    <!-- Image Section -->
+                    <img src="{{ asset('assets/desktop.webp') }}"
+                         alt="Featured Services"
+                         class="img-fluid mb-3"
+                         style="max-width: 100%; height: auto;">
 
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </div>
-    </div>
-        <div class="col-md-4">Column 2</div>
-        <div class="col-md-4">Column 3</div>
+                    <!-- Heading Section -->
+                    <h5 class="mt-3 mb-4">Desktop Services <br>
+                        Starts from: 500৳</h5>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="container text-center">
+                    <!-- Image Section -->
+                    <img src="{{ asset('assets/desktop.webp') }}"
+                         alt="Featured Services"
+                         class="img-fluid mb-3"
+                         style="max-width: 100%; height: auto;">
+
+                    <!-- Heading Section -->
+                    <h5 class="mt-3 mb-4">Desktop Services <br>
+                        Starts from: 500৳</h5>
+                </div>
+            </div>
+
 
     </div>
 

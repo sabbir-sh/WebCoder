@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ContactUsController;
+use App\Http\Controllers\Frontend\DesktopServicesController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyPolicyController;
 use App\Http\Controllers\Frontend\ServicesController;
@@ -33,7 +34,9 @@ use App\Http\Controllers\UserController;
     Route::get("/terms", [TarmAndConditionsController::class,"terms"])->name("terms");
 
 
+// featured Section
 
+        Route::get("/desktop-services", [DesktopServicesController::class,"DesktopServices"])->name("desktop.services");
 
 
 
