@@ -7,6 +7,8 @@
 
     <a href="{{ route('adminHomeSlider') }}">Home Slider</a>
 
+    <a href="{{ route('adminProducts') }}">All Products</a>
+
 
 
 

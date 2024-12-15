@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeSliderController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,5 +33,13 @@ Route::prefix('home/slider')->group(function () {
     Route::delete('/delete/{id}', [HomeSliderController::class, 'destroy'])->name('adminHomeSlider.destroy');
 });
 
+Route::prefix('products')->group(function () {
+    Route::get('/', [ProductController::class, 'index'])->name('adminProducts');
+    Route::get('/create', [ProductController::class, 'create'])->name('adminProducts.create');
+    Route::post('/store', [ProductController::class, 'store'])->name('adminProducts.store');
+    Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('adminProducts.edit');
+    Route::put('/update/{id}', [ProductController::class, 'update'])->name('adminProducts.update');
+    Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('adminProducts.destroy');
+});
 
 });
