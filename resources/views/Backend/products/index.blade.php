@@ -8,14 +8,13 @@
 @section('main-content')
     <div class="container mt-4">
         <h1 class="text-center mb-4">All Products</h1>
-        <a href="{{ route('adminProducts.create') }}" class="btn btn-success mb-3">Add New Slider</a>
+        <a href="{{ route('adminProducts.create') }}" class="btn btn-success mb-3">Add New Products</a>
 
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Description</th>
                     <th>Photo</th>
                     <th>Price</th>
                     <th>Quantity</th>
@@ -28,7 +27,6 @@
                 <tr>
                     <td>{{ $product->id }}</td>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->description }}</td>
                     <td>
                         <img src="{{ $product->photo && file_exists(public_path($product->photo))
                                       ? asset($product->photo)
