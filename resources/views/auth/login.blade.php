@@ -9,7 +9,7 @@
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="col-md-6 col-lg-5">
-        <h4 class="text-center mb-4">Login Page</h4>
+        <h4 class="text-center mb-4"><strong>LOGIN PAGE</strong></h4>
         <form action="{{ route('login-user') }}" method="POST" class="p-4 bg-light rounded shadow">
             @if(Session::has('success'))
                 <div class="alert alert-success">{{ Session::get('success') }}</div>
@@ -22,26 +22,26 @@
             @csrf
             <!-- Email Input -->
             <div class="form-group mb-3">
-                <label for="email">Email</label>
+                <label for="email"><b>Email</b></label>
                 <input type="text" class="form-control" placeholder="Enter Email" name="email" value="{{ old('email') }}">
                 <span class="text-danger">@error('email') {{$message}}@enderror</span>
             </div>
 
             <!-- Password Input -->
             <div class="form-group mb-3">
-                <label for="password">Password</label>
+                <label for="password"><b>Password</b></label>
                 <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
                 <span class="text-danger">@error('password') {{$message}}@enderror</span>
             </div>
 
             <!-- Login Button -->
             <div class="form-group mb-3">
-                <button class="btn btn-primary" type="submit">Login</button>
+                <button class="btn btn-primary" type="submit"><b>Login</b></button>
             </div>
 
             <!-- Forgot Password Link -->
             <div class="form-group mb-3">
-                <a href="{{ route('forgot-password') }}" class="text-primary">Forgot Password?</a>
+                <a href="{{ route('forgot-password') }}" class="text-primary"><b>Forgot Password?</b></a>
             </div>
 
             <!-- Register Button -->
