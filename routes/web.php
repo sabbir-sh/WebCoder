@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\DesktopServicesController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\JobApplicationController;
 use App\Http\Controllers\Frontend\PrivacyPolicyController;
 use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\frontend\TarmAndConditionsController;
@@ -57,6 +58,11 @@ use App\Http\Controllers\UserController;
     Route::post('/reset-password', [CustomAuthController::class, 'resetPassword'])->name('handle-reset-password');
 
 
+    //Job Applications
+
+
+Route::get('/job-applications/create', [JobApplicationController::class, 'create'])->name('job_applications.create');
+Route::post('/job-applications', [JobApplicationController::class, 'store'])->name('job_applications.store');
 
 
 Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logOut')->middleware('auth');
