@@ -60,9 +60,9 @@ use App\Http\Controllers\UserController;
 
     //Job Applications
 
-
-Route::get('/job-applications/create', [JobApplicationController::class, 'create'])->name('job_applications.create');
-Route::post('/job-applications', [JobApplicationController::class, 'store'])->name('job_applications.store');
+    
+        Route::get('/job-applications/create', [JobApplicationController::class, 'create'])->name('job_applications.create');
+        Route::post('/job-applications', [JobApplicationController::class, 'store'])->name('job_applications.store');
 
 
 Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logOut')->middleware('auth');

@@ -14,11 +14,28 @@
                     <h4 class="mb-0">Job Application Form</h4>
                 </div>
                 <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
+                     <!-- Display Success/Error Messages -->
+                            <div class="col-12">
+                                @if(session('error'))
+                                    <div id="error_m" class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+                                @if(session('success'))
+                                    <div id="success_m" class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            </div>
 
                     <form action="{{ route('job_applications.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -35,7 +52,7 @@
 
                         <div class="mb-3">
                             <label for="file" class="form-label">Upload Resume</label>
-                            <input type="file" name="file" id="file" class="form-control">
+                            <input type="file" name="file" id="file" class="form-control" accept=".pdf">
                         </div>
 
                         <div class="mb-3">

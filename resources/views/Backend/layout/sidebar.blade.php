@@ -146,6 +146,11 @@
                 <a href="{{ route('adminProducts') }}"><i class="fas fa-boxes"></i> All Products</a>
             </div>
 
+              <!-- Job Applications -->
+              <a href="{{ route('jobs.index') }}">
+                <i class="fas fa-home"></i> Job Applications
+            </a>
+
             <!-- Footer Section -->
             <hr>
             <div class="footer">
