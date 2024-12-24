@@ -31,5 +31,6 @@ class JobApplication extends Model
         'expected_salary',
         'status',
         'message',
+        'is_seen'
     ];
 }

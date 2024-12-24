@@ -20,10 +20,11 @@ class JobApplicationController extends Controller
         {
             return view('frontend.job.create');
         }
-
-        /**
-         * Store a new job application.
-         */
+        public function show($id)
+                {
+                    $application = JobApplication::findOrFail($id); // Retrieve the application by ID
+                    return view('backend.job.show-job', compact('application'));
+                }
         public function store(Request $request)
         {
             $validatedData = $request->validate([

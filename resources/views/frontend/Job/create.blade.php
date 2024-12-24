@@ -8,10 +8,10 @@
  <!-- Main Content Section -->
  <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-6">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Job Application Form</h4>
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0">Career Opportunities</h4>
                 </div>
                 <div class="card-body">
                      <!-- Display Success/Error Messages -->
@@ -80,7 +80,7 @@
                             <textarea name="message" id="message" class="form-control" rows="5" placeholder="Add any additional details here">{{ old('message') }}</textarea>
                         </div>
 
-                        <div class="d-grid">
+                        <div>
                             <button type="submit" class="btn btn-primary">Submit Application</button>
                         </div>
                     </form>
