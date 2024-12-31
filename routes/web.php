@@ -3,7 +3,6 @@
 use App\Http\Controllers\Backend\HomeSliderController;
 use App\Http\Controllers\CustomAuthController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\Frontend\AboutUsController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\DesktopServicesController;
@@ -37,7 +36,7 @@ use App\Http\Controllers\UserController;
 
 // featured Section
 
-        Route::get("/desktop-services", [DesktopServicesController::class,"DesktopServices"])->name("desktop.services");
+    Route::get("/desktop-services", [DesktopServicesController::class,"DesktopServices"])->name("desktop.services");
 
 
 
@@ -60,7 +59,7 @@ use App\Http\Controllers\UserController;
 
     //Job Applications
 
-    
+
         Route::get('/job-applications/create', [JobApplicationController::class, 'create'])->name('job_applications.create');
         Route::post('/job-applications', [JobApplicationController::class, 'store'])->name('job_applications.store');
 

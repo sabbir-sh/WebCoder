@@ -35,7 +35,7 @@
                              class="img-thumbnail"
                              style="width: 60px; height: 60px; object-fit: cover;">
                     </td>
-                    <td>${{ $product->price }}</td>
+                    <td>{{ $product->price }} BDT</td>
                     <td>{{ $product->quantity }}</td>
                     <td>
                         <label class="form-switch">
