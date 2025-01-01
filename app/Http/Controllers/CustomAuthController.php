@@ -85,21 +85,10 @@ class CustomAuthController extends Controller
         return redirect()->route("login");
     }
 
-    public function userList()
-    {
-        $da['welcome'] = 'Welcome To User List Page';
-        $da['title'] = 'All User Lists';
-        $da['users'] = User::orderBy('id','desc')->get();
-        return view('backend.user.userList', $da);
-    }
 
 
-    public function edit($id)
-    {
-        // Find the user by ID
-        $user = User::findOrFail($id);
-        return view('backend.user.edit', compact('user'));
-    }
+
+
 
     public function view($id)
     {
@@ -110,65 +99,9 @@ class CustomAuthController extends Controller
         return view('backend.user.view', compact('user'));
     }
 
-    public function update(Request $request, $id)
-    {
-        // Find the user by ID
-        $user = User::findOrFail($id);
 
-        // Validate the form input
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'dob' => 'required|date|before:today',
-            'email' => 'required|email|unique:users,email,' . $id,
-            // Add other validation rules as necessary
-        ]);
 
-        // Update the user with the validated data
-        $user->update($request->only(['name', 'dob', 'email', 'phone', 'gender', 'bio']));
-
-        // Redirect back with a success message
-        return redirect()->route('listOfUser')->with('success', 'User updated successfully.');
-    }
-
-    public function destroy($id)
-    {
-        $user = User::findOrFail($id);
-        $user->delete();
-        return redirect()->route('listOfUser')->with('success', 'User deleted successfully');
-    }
-
-    public function create()
-    {
-
-        return view('backend.user.create');
-    }
-
-    public function store(Request $request)
-    {
-        // Validate the form data
-        $request->validate([
-            'name' => 'required',
-            'dob' => 'required|date|before:today',
-            'email' => 'required|email|unique:users',
-            'number' => 'required|numeric',
-            'gender' => 'required|in:male,female,other',
-            'bio' => 'nullable|string|max:500',
-            'password' => 'required|min:4|max:8'
-        ]);
-
-        // Create a new user with a hashed password
-        User::create([
-            'name' => $request->name,
-            'dob' => $request->input('dob'), // Ensure it matches the column name in your database
-            'email' => $request->email,
-            'phone' => $request->input('number'), // Ensure it matches the column name in your database
-            'gender' => $request->input('gender'),
-            'bio' => $request->input('bio'),
-            'password' => bcrypt($request->password), // Hash the password
-        ]);
-        // Redirect back with a success message
-        return redirect()->route('listOfUser')->with('success', 'User created successfully!');
-    }
+   
 
     public function showForgotPasswordForm()
 {

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\HomeSliderController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\Frontend\JobApplicationController;
 use Illuminate\Support\Facades\Route;
@@ -13,15 +14,14 @@ Route::group(['middleware'=> 'auth', 'prefix' => 'admin'], function(){
     Route::get('dashboard', [DashboardController::class, 'index'])->name('adminDashboard');
 
     // User End
-    Route::get('/users/{id}/edit', [CustomAuthController::class, 'edit'])->name('sabbir.edit');
-    Route::put('/users/{id}', [CustomAuthController::class, 'update'])->name('sabbir.update');
-    Route::delete('/users/{id}', [CustomAuthController::class, 'destroy'])->name('sabbir.destroy');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('sabbir.edit');
+    Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('sabbir.destroy');
     Route::get('/users/{id}/view', [CustomAuthController::class, 'view'])->name('sabbir.view');
 
-    Route::get('/user/create', [CustomAuthController::class, 'create'])->name('user.create');
-    Route::post('/user/store', [CustomAuthController::class, 'store'])->name('user.store');
+    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 
-    Route::get('/user/list', [CustomAuthController::class, 'userList'])->name('listOfUser');
+    Route::get('/user/list', [UserController::class, 'userList'])->name('listOfUser');
 
     // Slider
 Route::prefix('home/slider')->group(function () {

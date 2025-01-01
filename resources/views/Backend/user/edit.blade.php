@@ -10,10 +10,10 @@
     <div class="main-content">
         <h4 class="text-primary" style="text-align: center">Edit User</h4>
         <hr>
-        <form action="{{ route('sabbir.update', $user->id) }}" method="POST" class="p-5 col-8 bg-light rounded shadow">
+        <form action="{{ route('user.store') }}" method="POST" class="p-5 col-8 bg-light rounded shadow">
             @csrf
-            @method('PUT') <!-- Use PUT for updating the resource -->
 
+            <input type="hidden" name="edit_id" value="{{$user->id}}">
             <!-- Name Field -->
             <div class="mb-3">
                 <label for="name" class="form-label"><strong>Name</strong></label>
@@ -45,8 +45,8 @@
             <div class="mb-3">
                 <label for="status" class="form-label"> <strong>Status</strong></label>
                 <select name="status" id="status" class="form-control">
-                    <option value="active" {{ old('status', $user->status) == 'active' ? 'selected' : '' }}>Active</option>
-                    <option value="inactive" {{ old('status', $user->status) == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                    <option value="1" {{ old('status', $user->status) == '1' ? 'selected' : '' }}>Active</option>
+                    <option value="0" {{ old('status', $user->status) == '0' ? 'selected' : '' }}>Inactive</option>
                 </select>
                 @error('status')
                     <div class="text-danger">{{ $message }}</div>
@@ -56,7 +56,7 @@
             <!-- Phone Field -->
             <div class="mb-3">
                 <label for="phone" class="form-label"> <strong>Phone</strong></label>
-                <input type="text" name="phone" id="phone" value="{{ old('phone', $user->phone) }}" class="form-control">
+                <input type="text" name="number" id="phone" value="{{ old('phone', $user->phone) }}" class="form-control">
                 @error('phone')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
