@@ -13,8 +13,8 @@ class ProductController extends Controller
         // Display all products
         public function index()
         {
-            $products = Products::all();
-            return view('backend.products.index', compact('products'));
+            $data['products'] = Products::all();
+            return view('backend.products.index', $data);
         }
 
         // Show the form to create a new product

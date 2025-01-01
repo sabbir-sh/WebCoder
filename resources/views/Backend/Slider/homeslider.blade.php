@@ -7,7 +7,7 @@
 @endsection
 @section('main-content')
     <div class="container mt-4">
-        <h1 class="text-center mb-4">Home Sliders</h1>
+        <h1 class="text-center mb-4"><b>{{ $title }}</b></h1>
         <a href="{{ route('adminHomeSlider.create') }}" class="btn btn-success mb-3">Add New Slider</a>
 
         <table class="table table-bordered table-striped">
@@ -49,14 +49,26 @@
                                 <span class="slider round"></span>
                             </label>
                         </td>
-                        <td><b>{{ $slider->link }}</b></a></td>
                         <td>
-                            <a href="{{ route('adminHomeSlider.edit', $slider->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <form action="{{ route('adminHomeSlider.destroy', $slider->id) }}" method="POST" style="display:inline;">
+                            <a href="{{ $slider->link }}" target="_blank" class="text-decoration-none">
+                                <b>{{ $slider->link }}</b>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <!-- Edit Button -->
+                            <a href="{{ route('adminHomeSlider.edit', $slider->id) }}" class="btn btn-primary btn-sm" title="Edit">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+
+                            <!-- Delete Button -->
+                            <form action="{{ route('adminHomeSlider.destroy', $slider->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Are you sure?')">Delete</button>
+                                    onclick="return confirm('Are you sure you want to delete this user?')"
+                                    title="Delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
                             </form>
                         </td>
                     </tr>

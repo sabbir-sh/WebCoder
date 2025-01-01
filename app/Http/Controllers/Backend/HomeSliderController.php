@@ -10,8 +10,9 @@ class HomeSliderController extends Controller
 {
     public function index()
     {
-        $sliders = HomeSlider::all();
-        return view('backend.slider.homeslider', compact('sliders'));
+        $data['sliders'] = HomeSlider::all();
+        $data['title'] = 'Home Slider';
+        return view('backend.slider.homeslider', $data);
     }
 
     /**
@@ -46,8 +47,8 @@ class HomeSliderController extends Controller
      */
     public function edit($id)
     {
-        $slider = HomeSlider::findOrFail($id);
-        return view('backend.slider.edit', compact('slider'));
+        $data['slider'] = HomeSlider::findOrFail($id);
+        return view('backend.slider.edit', $data);
     }
 
     /**

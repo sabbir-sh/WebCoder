@@ -56,22 +56,7 @@
             <div class="row text-center">
                 <!-- Footer Branding -->
                 <div class="col-12 mb-3">
-                    <p class="mb-2">&copy; 2025 <strong>Your Website</strong>. All rights reserved.</p>
-                </div>
-
-                <!-- Social Media Links -->
-                <div class="col-12">
-                    <div class="social-links">
-                        <a href="https://facebook.com" target="_blank" class="mx-3 text-decoration-none text-primary">
-                            <i class="fab fa-facebook fa-lg"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank" class="mx-3 text-decoration-none text-info">
-                            <i class="fab fa-twitter fa-lg"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" class="mx-3 text-decoration-none text-danger">
-                            <i class="fab fa-instagram fa-lg"></i>
-                        </a>
-                    </div>
+                    <p class="mb-2">&copy; <strong>Your Website</strong>. All rights reserved.</p>
                 </div>
             </div>
         </div>
