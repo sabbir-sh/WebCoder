@@ -13,18 +13,22 @@ class JobApplicationController extends Controller
 
     public function index()
     {
-        $applications  = JobApplication::all();
-        return view('backend.job.list-of-jobs', compact('applications'));
+        $data['applications']  = JobApplication::all();
+        return view('backend.job.list-of-jobs', $data);
     }
         public function create()
         {
             return view('frontend.job.create');
         }
+
         public function show($id)
-                {
-                    $application = JobApplication::findOrFail($id); // Retrieve the application by ID
-                    return view('backend.job.show-job', compact('application'));
-                }
+            {
+                $application = JobApplication::find($id);
+                $application->is_seen = 1; // Mark as seen (downloaded)
+                $application->save();
+
+                return view('backend.job.show-job', compact('application'));
+            }
         public function store(Request $request)
         {
             $validatedData = $request->validate([
@@ -71,6 +75,10 @@ class JobApplicationController extends Controller
             {
                 // Find the job application
                 $application = JobApplication::findOrFail($id);
+                if ($application->is_seen != 1) {
+                    $application->is_seen = 1;
+                    $application->save();
+                }
 
                 // Ensure the file exists
                 $filePath = storage_path('app/public/' . $application->file);

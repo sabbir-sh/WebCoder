@@ -67,6 +67,8 @@
                         <li><a href="/" class="text-decoration-none text-dark">Home</a></li>
                         <li><a href="/about" class="text-decoration-none text-dark">About</a></li>
                         <li><a href="/contact" class="text-decoration-none text-dark">Contact</a></li>
+                        <li><a href="/privacy&policy" class="text-decoration-none text-dark">Privacy & Policy </a></li>
+                        <li><a href="/terms" class="text-decoration-none text-dark">Term Conditions</a></li>
                     </ul>
                 </div>
 

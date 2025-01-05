@@ -90,99 +90,107 @@
     </div>
 
  {{-- Section 2 --}}
-    <div class="row">
-            <div class="col-md-12">
-                <div class="container">
-                    <h2 class="mt-5 mb-4" style="text-align: center">Featured Services</h2>
-                </div>
-            </div>
-
-            <div class="col-md-2">
-                <a href="{{ url('/desktop-services') }}" class="text-decoration-none">
-
-                    <div class="container text-center">
-                        <!-- Image Section -->
-                        <img src="{{ asset('assets/desktop.webp') }}"
-                             alt="Featured Services"
-                             class="img-fluid mb-3"
-                             style="max-width: 100%; height: auto;">
-
-                        <!-- Heading Section -->
-                        <h5 class="mt-3 mb-4">Desktop Services <br>
-                            Starts from: 500৳</h5>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-10 p-0 ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <h2 class="mt-5 mb-4" style="text-align: center">Featured Services</h2>
+                        </div>
                     </div>
-                </a>
+
+                    <div class="col-md-2">
+                        <a href="{{ url('/desktop-services') }}" class="text-decoration-none">
+
+                            <div class="container text-center">
+                                <!-- Image Section -->
+                                <img src="{{ asset('assets/desktop.webp') }}"
+                                    alt="Featured Services"
+                                    class="img-fluid mb-3"
+                                    style="max-width: 100%; height: auto;">
+
+                                <!-- Heading Section -->
+                                <h5 class="mt-3 mb-4">Desktop Services <br>
+                                    Starts from: 500৳</h5>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2">
+                        <a href="{{ url('/laptop-services') }}" class="text-decoration-none">
+                        <div class="container text-center">
+                            <!-- Image Section -->
+                            <img src="{{ asset('assets/laptop.webp') }}"
+                                alt="Featured Services"
+                                class="img-fluid mb-3"
+                                style="max-width: 100%; height: auto;">
+
+                            <!-- Heading Section -->
+                            <h5 class="mt-3 mb-4">Laptop Services <br>
+                                Starts from: 1000৳</h5>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="container text-center">
+                            <!-- Image Section -->
+                            <img src="{{ asset('assets/desktop.webp') }}"
+                                alt="Featured Services"
+                                class="img-fluid mb-3"
+                                style="max-width: 100%; height: auto;">
+
+                            <!-- Heading Section -->
+                            <h5 class="mt-3 mb-4">Desktop Services <br>
+                                Starts from: 500৳</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="container text-center">
+                            <!-- Image Section -->
+                            <img src="{{ asset('assets/desktop.webp') }}"
+                                alt="Featured Services"
+                                class="img-fluid mb-3"
+                                style="max-width: 100%; height: auto;">
+
+                            <!-- Heading Section -->
+                            <h5 class="mt-3 mb-4">Desktop Services <br>
+                                Starts from: 500৳</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="container text-center">
+                            <!-- Image Section -->
+                            <img src="{{ asset('assets/desktop.webp') }}"
+                                alt="Featured Services"
+                                class="img-fluid mb-3"
+                                style="max-width: 100%; height: auto;">
+
+                            <!-- Heading Section -->
+                            <h5 class="mt-3 mb-4">Desktop Services <br>
+                                Starts from: 500৳</h5>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="container text-center">
+                            <!-- Image Section -->
+                            <img src="{{ asset('assets/desktop.webp') }}"
+                                alt="Featured Services"
+                                class="img-fluid mb-3"
+                                style="max-width: 100%; height: auto;">
+
+                            <!-- Heading Section -->
+                            <h5 class="mt-3 mb-4">Desktop Services <br>
+                                Starts from: 500৳</h5>
+                        </div>
+                    </div>
+
+
             </div>
-
-            <div class="col-md-2">
-                <div class="container text-center">
-                    <!-- Image Section -->
-                    <img src="{{ asset('assets/desktop.webp') }}"
-                         alt="Featured Services"
-                         class="img-fluid mb-3"
-                         style="max-width: 100%; height: auto;">
-
-                    <!-- Heading Section -->
-                    <h5 class="mt-3 mb-4">Desktop Services <br>
-                        Starts from: 500৳</h5>
-                </div>
             </div>
-
-            <div class="col-md-2">
-                <div class="container text-center">
-                    <!-- Image Section -->
-                    <img src="{{ asset('assets/desktop.webp') }}"
-                         alt="Featured Services"
-                         class="img-fluid mb-3"
-                         style="max-width: 100%; height: auto;">
-
-                    <!-- Heading Section -->
-                    <h5 class="mt-3 mb-4">Desktop Services <br>
-                        Starts from: 500৳</h5>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="container text-center">
-                    <!-- Image Section -->
-                    <img src="{{ asset('assets/desktop.webp') }}"
-                         alt="Featured Services"
-                         class="img-fluid mb-3"
-                         style="max-width: 100%; height: auto;">
-
-                    <!-- Heading Section -->
-                    <h5 class="mt-3 mb-4">Desktop Services <br>
-                        Starts from: 500৳</h5>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="container text-center">
-                    <!-- Image Section -->
-                    <img src="{{ asset('assets/desktop.webp') }}"
-                         alt="Featured Services"
-                         class="img-fluid mb-3"
-                         style="max-width: 100%; height: auto;">
-
-                    <!-- Heading Section -->
-                    <h5 class="mt-3 mb-4">Desktop Services <br>
-                        Starts from: 500৳</h5>
-                </div>
-            </div>
-
-            <div class="col-md-2">
-                <div class="container text-center">
-                    <!-- Image Section -->
-                    <img src="{{ asset('assets/desktop.webp') }}"
-                         alt="Featured Services"
-                         class="img-fluid mb-3"
-                         style="max-width: 100%; height: auto;">
-
-                    <!-- Heading Section -->
-                    <h5 class="mt-3 mb-4">Desktop Services <br>
-                        Starts from: 500৳</h5>
-                </div>
-            </div>
-
-
+        </div>
     </div>
 
 @endsection

@@ -8,6 +8,7 @@ use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Frontend\DesktopServicesController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\JobApplicationController;
+use App\Http\Controllers\Frontend\LaptopServicesController;
 use App\Http\Controllers\Frontend\PrivacyPolicyController;
 use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\frontend\TarmAndConditionsController;
@@ -37,6 +38,7 @@ use App\Http\Controllers\UserController;
 // featured Section
 
     Route::get("/desktop-services", [DesktopServicesController::class,"DesktopServices"])->name("desktop.services");
+    Route::get("/laptop-services", [LaptopServicesController::class,"LaptopServices"])->name("laptop.services");
 
 
 

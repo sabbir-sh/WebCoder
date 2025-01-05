@@ -19,12 +19,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('contact') }}"> Contact Us </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('Privacy.Policy') }}"> Privacy Policy </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('terms') }}"> Term Conditions </a>
-                    </li>
+                   
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('job_applications.create') }}"> Career </a>
                     </li>

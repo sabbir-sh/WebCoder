@@ -33,13 +33,14 @@
                         @foreach($applications as $application)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $application->created_at->format('d M Y, h:i A') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($application->created_at)->timezone('Asia/Dhaka')->format('d M Y, h:i A') }}</td>
                             <td>{{ $application->job_title }}</td>
                             <td>{{ $application->type }}</td>
                             <td>{{ $application->name }}</td>
                             <td>{{ $application->phone }}</td>
                             <td>{{ $application->email }}</td>
-                            <td>${{ number_format($application->expected_salary, 2) }}</td>
+                            <td>BDT {{ number_format($application->expected_salary, 2) }}</td>
+
 
                             <!-- Application Status Badge -->
                             <td>
@@ -75,8 +76,5 @@
         </div>
     </div>
 </div>
-
-
-
 
 @endsection
