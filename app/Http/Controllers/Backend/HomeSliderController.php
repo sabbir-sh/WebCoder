@@ -10,22 +10,17 @@ class HomeSliderController extends Controller
 {
     public function index()
     {
-        $data['sliders'] = HomeSlider::all();
+        $data['sliders'] = HomeSlider::orderBy('created_at', 'desc')->get();
         $data['title'] = 'Home Slider';
         return view('backend.slider.homeslider', $data);
     }
 
-    /**
-     * Show the form for creating a new slider.
-     */
     public function create()
     {
         return view('backend.slider.create');
     }
 
-    /**
-     * Store a newly created slider in storage.
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -42,18 +37,14 @@ class HomeSliderController extends Controller
         return redirect()->route('adminHomeSlider')->with('success', 'Slider created successfully.');
     }
 
-    /**
-     * Show the form for editing the specified slider.
-     */
+
     public function edit($id)
     {
         $data['slider'] = HomeSlider::findOrFail($id);
         return view('backend.slider.edit', $data);
     }
 
-    /**
-     * Update the specified slider in storage.
-     */
+
     public function update(Request $request, $id)
     {
         $slider = HomeSlider::findOrFail($id);
@@ -72,9 +63,7 @@ class HomeSliderController extends Controller
         return redirect()->route('adminHomeSlider')->with('success', 'Slider updated successfully.');
     }
 
-    /**
-     * Remove the specified slider from storage.
-     */
+
     public function destroy($id)
     {
         $slider = HomeSlider::findOrFail($id);
@@ -84,14 +73,13 @@ class HomeSliderController extends Controller
     }
 
     public function updateStatus(Request $request)
-{
-    $slider = HomeSlider::find($request->id);
-    if ($slider) {
-        $slider->published = $request->published;
-        $slider->save();
-        return response()->json(['success' => true]);
+    {
+        $slider = HomeSlider::find($request->id);
+        if ($slider) {
+            $slider->published = $request->published;
+            $slider->save();
+            return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
     }
-    return response()->json(['success' => false]);
-}
-
 }
