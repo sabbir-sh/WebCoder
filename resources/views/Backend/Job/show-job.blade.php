@@ -64,7 +64,7 @@
                         <div class="mb-4">
                             <p><strong>Application Status:</strong>
                                 @if ($application->is_seen == 1)
-                                    <span class="badge bg-danger">Already Downloaded</span>
+                                    <span class="badge bg-dark">Already View</span>
                                 @else
                                     <span class="badge bg-success">New</span>
                                 @endif
