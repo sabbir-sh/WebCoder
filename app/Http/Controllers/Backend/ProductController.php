@@ -13,6 +13,7 @@ class ProductController extends Controller
     // Display all products
     public function index()
     {
+        $data['title'] = 'All Products';
         $data['products'] = Products::orderBy('created_at', 'desc')->get();
         return view('backend.products.index', $data);
     }
@@ -40,7 +41,6 @@ class ProductController extends Controller
             $photoPath = $request->file('photo')->store('products', 'public');
             $validatedData['photo'] = $photoPath;
         }
-
         Products::create($validatedData);
 
         return redirect()->route('adminProducts')->with('success', 'Product created successfully!');

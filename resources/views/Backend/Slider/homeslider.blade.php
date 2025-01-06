@@ -14,7 +14,7 @@
     @if($sliders->count() > 0)
     <div class="table-responsive">
         <table class="table table-bordered table-hover align-middle">
-            <thead class="table-dark text-center">
+            <thead class="table-dark">
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
@@ -89,6 +89,6 @@
 @endsection
 
 <script>
- 
+
 </script>
 
