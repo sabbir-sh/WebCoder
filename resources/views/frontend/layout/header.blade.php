@@ -19,16 +19,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('contact') }}"> Contact Us </a>
                     </li>
-                   
+
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('job_applications.create') }}"> Career </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link " href="{{ route('login') }}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">Register</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

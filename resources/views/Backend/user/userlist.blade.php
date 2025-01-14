@@ -25,7 +25,6 @@
                     <th>Phone</th>
                     <th>Gender</th>
                     <th>Bio</th>
-                    <th>Status</th>
                     <th>Created At</th>
                     <th>Actions</th>
                 </tr>
@@ -40,11 +39,7 @@
                     <td>{{ $user->phone }}</td>
                     <td>{{ ucfirst($user->gender) }}</td>
                     <td>{{ Str::limit($user->bio, 50) }}</td>
-                    <td class="text-center">
-                        <span class="badge {{ $user->status === 'active' ? 'bg-success' : 'bg-danger' }}">
-                            {{ ucfirst($user->status) }}
-                        </span>
-                    </td>
+                 
                     <td>{{ $user->created_at->format('d M Y') }}</td>
                     <td class="text-center">
                         <!-- Edit Button -->
