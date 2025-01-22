@@ -38,9 +38,9 @@
 
                         <!-- Product Photo -->
                         <td>
-                            <img src="{{ $product->photo && file_exists(public_path($product->photo))
-                                          ? asset($product->photo)
-                                          : asset('images/default-image.jpg') }}"
+                            <img src="{{ $product->photo && file_exists(public_path('storage/'.$product->photo))
+                                        ? asset('storage/'.$product->photo)
+                                        : asset('images/default-image.jpg') }}"
                                  alt="Product Image"
                                  class="img-thumbnail product-image"
                                  style="width: 80px; height: 80px; object-fit: cover;">

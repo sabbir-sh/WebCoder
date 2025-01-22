@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\HomeService;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,6 +16,15 @@ class HomeController extends Controller
         $data['page_title'] = "Home Page ";
 
         return view('frontend.home', $data);
+    }
+
+    public function productsshow()
+    {
+        // Fetch all products from the database
+        $products = Products::all();
+
+        // Pass products to the homepage view
+        return view('frontend.products.show', compact('products'));
     }
 
 }

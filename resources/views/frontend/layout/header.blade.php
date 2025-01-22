@@ -11,6 +11,12 @@
                         <a class="nav-link active" href="{{ route('home') }}"> Home </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('products.show') }}"> Products </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('userlist') }}"> All User </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="{{ route('about') }}"> About Us </a>
                     </li>
                     <li class="nav-item">

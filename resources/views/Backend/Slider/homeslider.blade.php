@@ -30,20 +30,19 @@
             <tbody>
                 @foreach ($sliders as $slider)
                 <tr>
-                    <td class="text-center">{{ $slider->id }}</td>
-                    <td>{{ $slider->title }}</td>
-                    <td class="text-center">
-                        <img src="{{ $slider->photo && file_exists(public_path($slider->photo))
-                                      ? asset($slider->photo)
-                                      : asset('images/default-image.jpg') }}"
-                             alt="Slider Image"
-                             class="img-thumbnail"
-                             style="width: 50px; height: 50px; object-fit: cover;">
-                    </td>
+                        <td class="text-center">{{ $slider->id }}</td>
+                        <td>{{ $slider->title }}</td>
+                            <td class="text-center">
+                                <img src="{{ $slider->photo && file_exists(public_path('storage/'.$slider->photo))
+                                ? asset('storage/'.$slider->photo)
+                                : asset('images/default-image.jpg') }}"
+                                alt="Slider Image"
+                                class="img-thumbnail"
+                                style="width: 50px; height: 50px; object-fit: cover;">
+                            </td>
                     <td>{{ $slider->position }}</td>
                     <td>{{ $slider->subtitle }}</td>
                     <td>{{ $slider->offer }}</td>
-
                     <td class="text-center">
                         <label class="form-switch">
                             <input type="checkbox" class="form-check-input toggle-published"
@@ -85,6 +84,7 @@
     </div>
     @endif
 </div>
+
 
 @endsection
 

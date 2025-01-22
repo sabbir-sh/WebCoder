@@ -18,9 +18,12 @@ use App\Http\Controllers\UserController;
 // Frontend View
     //Home Page
     Route::get("/", [HomeController::class,"index"])->name("home");
+    Route::get('/products/all', [HomeController::class, 'productsshow'])->name('products.show');
 
     //About Us Page
     Route::get("/about", [AboutUsController::class,"about"])->name("about");
+    Route::get('/user/all', [AboutUsController::class, 'userList'])->name('userlist');
+
 
     //Contact Us page
     Route::get("/contact", [ContactUsController::class,"contact"])->name("contact");
