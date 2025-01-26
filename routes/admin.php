@@ -31,7 +31,7 @@ Route::prefix('home/slider')->group(function () {
     Route::get('/edit/{id}', [HomeSliderController::class, 'edit'])->name('adminHomeSlider.edit');
     Route::put('/update/{id}', [HomeSliderController::class, 'update'])->name('adminHomeSlider.update');
     Route::delete('/delete/{id}', [HomeSliderController::class, 'destroy'])->name('adminHomeSlider.destroy');
-    Route::post('/{slider}/toggle-published', [HomeSliderController::class, 'togglePublished'])->name('sliders.togglePublished');
+    Route::post('/status-published', [HomeSliderController::class, 'updateStatus'])->name('sliders.status');
 
 });
 
@@ -42,6 +42,7 @@ Route::prefix('products')->group(function () {
     Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('adminProducts.edit');
     Route::put('/update/{id}', [ProductController::class, 'update'])->name('adminProducts.update');
     Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('adminProducts.destroy');
+    Route::post('/status-published', [ProductController::class, 'updateStatus'])->name('sliders.status');
 });
 
 Route::prefix('jobs')->group(function () {

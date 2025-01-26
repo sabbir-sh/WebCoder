@@ -55,10 +55,12 @@
                         <!-- Product Published -->
                         <td>
                             <label class="form-switch">
-                                <input type="checkbox" class="form-check-input toggle-published"
-                                       data-id="{{ $product->id }}"
-                                       {{ $product->published ? 'checked' : '' }}
-                                       onchange="updateStatus(this)">
+                                <input
+                                    type="checkbox"
+                                    class="form-check-input toggle-published"
+                                    data-id="{{ $product->id }}"
+                                    {{ $product->published ? 'checked' : '' }}
+                                    onchange="updateStatus(this)">
                                 <span class="slider round"></span>
                             </label>
                         </td>
@@ -97,5 +99,29 @@
 @endsection
 
 <script>
+function updateStatus(el) {
+    const productId = $(el).data('id'); // Get product ID from the data attribute
+    const status = el.checked ? 1 : 0; // Determine the new status
+
+    $.ajax({
+        url: '{{ route('sliders.status') }}', // Ensure the route matches
+        type: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}', // Include CSRF token
+            id: productId,
+            published: status,
+        },
+        success: function(response) {
+            if (response.success) {
+                AIZ.plugins.notify('success', response.message); // Show success notification
+            } else {
+                AIZ.plugins.notify('danger', response.message); // Show error notification
+            }
+        },
+        error: function(xhr) {
+            AIZ.plugins.notify('danger', 'An error occurred. Please try again.'); // Show error notification
+        },
+    });
+}
 
 </script>

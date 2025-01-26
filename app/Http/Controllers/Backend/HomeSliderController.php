@@ -74,12 +74,25 @@ class HomeSliderController extends Controller
 
     public function updateStatus(Request $request)
     {
-        $slider = HomeSlider::find($request->id);
-        if ($slider) {
+        try {
+            // Find the slider by ID
+            $slider = HomeSlider::findOrFail($request->id);
+
+            // Update the published status
             $slider->published = $request->published;
             $slider->save();
-            return response()->json(['success' => true]);
+
+            // Return a success response
+            return response()->json([
+                'success' => true,
+                'message' => 'Slider status updated successfully.',
+            ]);
+        } catch (\Exception $e) {
+            // Handle errors and return a failure response
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to update slider status. Please try again.',
+            ]);
         }
-        return response()->json(['success' => false]);
     }
 }

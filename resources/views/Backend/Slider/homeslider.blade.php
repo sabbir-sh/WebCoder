@@ -43,13 +43,18 @@
                     <td>{{ $slider->position }}</td>
                     <td>{{ $slider->subtitle }}</td>
                     <td>{{ $slider->offer }}</td>
-                    <td class="text-center">
+                    <td>
                         <label class="form-switch">
-                            <input type="checkbox" class="form-check-input toggle-published"
-                                   data-id="{{ $slider->id }}"
-                                   {{ $slider->published ? 'checked' : '' }}>
+                            <input
+                                type="checkbox"
+                                class="form-check-input toggle-published"
+                                data-id="{{ $slider->id }}"
+                                {{ $slider->published ? 'checked' : '' }}
+                                onchange="updateStatus(this)">
+                            <span class="slider round"></span>
                         </label>
                     </td>
+
 
                     <td>
                         <a href="{{ $slider->link }}" target="_blank" class="text-decoration-none">
@@ -89,6 +94,30 @@
 @endsection
 
 <script>
+function updateStatus(el) {
+    const sliderId = $(el).data('id'); // Get slider ID from the data attribute
+    const status = el.checked ? 1 : 0; // Determine the status based on checkbox state
+
+    $.ajax({
+        url: '{{ route('sliders.status') }}', // Use the correct route
+        type: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}', // Include CSRF token
+            id: sliderId,
+            published: status,
+        },
+        success: function(response) {
+            if (response.success) {
+                AIZ.plugins.notify('success', response.message); // Notify success
+            } else {
+                AIZ.plugins.notify('danger', response.message); // Notify failure
+            }
+        },
+        error: function(xhr) {
+            AIZ.plugins.notify('danger', 'An error occurred. Please try again.'); // Notify general error
+        },
+    });
+}
 
 </script>
 

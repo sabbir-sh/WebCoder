@@ -97,4 +97,28 @@ class ProductController extends Controller
 
         return redirect()->route('adminProducts')->with('success', 'Product deleted successfully!');
     }
+
+    public function updateStatus(Request $request)
+    {
+        try {
+            // Retrieve the product by ID
+            $product = Products::findOrFail($request->id);
+
+            // Update the 'published' status
+            $product->published = $request->published;
+            $product->save();
+
+            // Return success response
+            return response()->json([
+                'success' => true,
+                'message' => 'Product status updated successfully.',
+            ]);
+        } catch (\Exception $e) {
+            // Handle errors and return failure response
+            return response()->json([
+                'success' => false,
+                'message' => 'Unable to update product status. Please try again.',
+            ]);
+        }
+    }
 }
